@@ -1,0 +1,135 @@
+
+TESTIMONIOS PARA LA SECCIÓN DE TESTIMONIOS
+
+La Comunidad Laboral Liceista ofrece las mayores oportunidades para sus miembros. Al existir un espacio común de valores y camaradería, el incentivo apoyo mutuo entre los participantes es mucho mayor. En un mundo donde la digitalización trae como desafío la confianza entre las partes, esta gran red que une a las tres FFAA de la nación facilita la colobaracion, el intercambio y  los acuerdos entre los diferentes liceistas de todo el país, bajo un mismo ideal, el patriotismo.
+
+Bienvenidos a la Comunidad laboral liceista!
+Esta nueva comunidad, formada por personas que pertenecieron y pertenecen a los distintos liceos militares que se encuentran a lo largo y ancho del país, tiene como objetivo crear lazos que formen una red de contactos entre todos sus miembros. Dando la posibilidad de pedir y brindar la ayuda que se necesite para las distintas circunstancias que surgen en este mundo tan complejo como cambiante. Ponderando, siempre, la importancia que tiene el poder contar con personas que comparten entre sí valores tan importantes como el respeto y la honestidad.
+
+
+
+HOJA DE RUTA BACKEND
+
+1. Configurar a nivel general aplicación (en consola de firebase)
+2. Configurar autenticación
+3. Terminar mensajes de cambio de confirmación, cambio de constraseña, etc
+4. Elaborar firestore data base
+5. Configurar permisos de base de datos
+6. Implementar google analytics
+7. Completar responsive del sitio
+8. Añadir etiquetas SEO
+9. Hacer OPG de la página
+
+
+
+import mongoose from "mongoose";
+
+const camaradaSchema = new mongoose.Schema(
+    {
+        nombre:{
+            type: String,
+            required: true
+        },
+        email:{
+            type: String,
+            required: true,
+            unique: true,
+            trim: true
+        },
+        password:{
+            type: String,
+            required: true,
+            trim: true
+        },
+        telefono:{
+            type: Number,
+            required: true
+        },
+        ffaa:{
+            type: String,
+            required: true,
+            enum: ["Ejército", "Fuerza Aérea", "Armada"]
+        },
+        liceo:{
+            type: String,
+            required: true,
+            enum: [
+                'Liceo Militar General Espejo', 
+                "Liceo Militar General Lamadrid",
+                "Liceo Militar General San Martin",
+                "Liceo Militar General Belgrano",
+                "Liceo Militar General Paz",
+                "Liceo Militar General Roca",
+                "Liceo Militar Naval Almirante Storni",
+                "Liceo Militar Naval Almirante Brown",
+                "Liceo Aeronáutico Militar"
+            ]
+        },
+        promocion:{
+            type: Number,
+            required: true
+        },
+        profesion:{
+            type: String,
+            required: true
+        },
+        especialidad:{
+            type: String,
+            required: false
+        },
+        rubro:{
+            type: String,
+            required: true
+        },
+        provincia:{
+            type: String,
+            required: true,
+            enum: [
+                "Buenos Aires",
+                "CABA",
+                "Catamarca",
+                "Chaco",
+                "Chubut",
+                "Córdoba",
+                "Corrientes",
+                "Entre Ríos",
+                "Formosa",
+                "Jujuy",
+                "La Pampa",
+                "La Rioja",
+                "Mendoza",
+                "Misiones",
+                "Neuquén",
+                "Río Negro",
+                "Salta",
+                "San Juan",
+                "San Luis",
+                "Santa Cruz",
+                "Santa Fe",
+                "Santiago del Estero",
+                "Tierra del Fuego",
+                "Tucumán"
+            ]
+        },
+        ciudad:{
+            type: String,
+            required: true
+        },
+        empresa:{
+            type: String,
+            required: false
+        },
+        info:{
+            type: String,
+            required: false
+        },
+        role:{
+            type: String,
+            default: "User"
+        }
+    }, {timestamps: true}
+)
+
+const Camarada = mongoose.model('Camarada', camaradaSchema)
+
+export default Camarada;

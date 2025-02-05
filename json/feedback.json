@@ -1,0 +1,23 @@
+[
+    {
+        "imgRoute": "./assets/testimonios-1.jpeg",
+        "imgAlt": "testimonio-juan-cruz-diaz-rossi",
+        "name": "Juan Cruz Diaz Rossi",
+        "prom": "LMGE Promoción LXX",
+        "info": "La Comunidad Laboral Liceista ofrece las mayores oportunidades para sus miembros. Al existir un espacio común de valores y camaradería, el incentivo apoyo mutuo entre los participantes es mucho mayor. En un mundo donde la digitalización trae como desafío la confianza entre las partes, esta gran red que une a las tres FFAA de la nación facilita la colobaracion, el intercambio y  los acuerdos entre los diferentes liceistas de todo el país, bajo un mismo ideal, el patriotismo."
+    },
+    {
+        "imgRoute": "./assets/logo-usuario.png",
+        "imgAlt": "testimonio-gerónimo-levit",
+        "name": "Gerónimo Levit",
+        "prom": "LMGE Promoción LXX",
+        "info": "Bienvenidos a la Comunidad laboral liceista! Esta nueva comunidad, formada por personas que pertenecieron y pertenecen a los distintos liceos militares que se encuentran a lo largo y ancho del país, tiene como objetivo crear lazos que formen una red de contactos entre todos sus miembros. Dando la posibilidad de pedir y brindar la ayuda que se necesite para las distintas circunstancias que surgen en este mundo tan complejo como cambiante. Ponderando, siempre, la importancia que tiene el poder contar con personas que comparten entre sí valores tan importantes como el respeto y la honestidad"
+    },
+    {
+        "imgRoute": "./assets/logo-usuario.png",
+        "imgAlt": "testimonio-marcelo-gelardi",
+        "name": "Nombre Apellido",
+        "prom": "LMGE Promoción LXX",
+        "info": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic aspernatur iure consectetur laborum ab, minus, cumque quas eaque fugiat repellendus earum! Minima id praesentium libero? Debitis nostrum quo enim veritatis!"
+    }
+]

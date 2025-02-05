@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - CLL</title>
+    <!-- CDN Tailwind -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="organizador">
+        <header>
+            <!-- Parte propia elaborada con logo -->
+            <div class="logo-cont">
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+
+            <!-- Main navigation container -->
+            <nav class="relative flex w-full flex-nowrap items-center justify-between py-2 text-neutral-500 shadow-dark-mild hover:text-neutral-700 focus:text-neutral-700 lg:flex-wrap lg:justify-start lg:py-4"
+                data-twe-navbar-ref>
+                <div class="flex w-full flex-wrap items-center justify-center px-3">
+                    <!-- Hamburger button for mobile view -->
+                    <button
+                        class="block border-0 bg-transparent px-2 text-amber-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
+                        type="button" data-twe-collapse-init data-twe-target="#navbarSupportedContent2"
+                        aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                        <!-- Hamburger icon -->
+                        <span class="[&>svg]:w-7 [&>svg]:stroke-amber-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                    </button>
+
+                    <!-- Collapsible navbar container -->
+                    <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center justify-center lg:mt-0 lg:!flex lg:basis-auto"
+                        id="navbarSupportedContent2" data-twe-collapse-item>
+                        <!-- Left links -->
+                        <ul class="list-style-none flex flex-col items-center ps-0 lg:mt-1 lg:flex-row lg:mb-1"
+                            data-twe-navbar-nav-ref>
+                            <!-- Home link -->
+                            <li class="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2" data-twe-nav-item-ref>
+                                <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:border-b-2 hover:border-amber-400 hover:ease-in-out focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
+                                    aria-current="page" href="../index.html" data-twe-nav-link-ref>Inicio</a>
+                            </li>
+                            <!-- About link -->
+                            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
+                                <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
+                                    href="../index.html#about" data-twe-nav-link-ref>Nosotros</a>
+                            </li>
+                            <!-- Clients link -->
+                            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
+                                <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
+                                    href="../index.html#feedback" data-twe-nav-link-ref>Reseñas</a>
+                            </li>
+                            <!-- Partners link -->
+                            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
+                                <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
+                                    href="../index.html#partners" data-twe-nav-link-ref>Socios</a>
+                            </li>
+                            <!-- Login link -->
+                            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
+                                <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
+                                    href="./pages/login.html" data-twe-nav-link-ref>Acceder</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="form-section">
+                <div class="title-form-cont">
+                    <p>Registrate</p>
+                </div>
+                <form action="" id="formRegister">
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="text" placeholder="Nombre y apellido" required>
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="password" placeholder="Contraseña" required>
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="number" placeholder="Teléfono" required>
+                    </div>
+                    <div class="select-cont">
+                        <label for=""></label>
+                        <select name="" id="ffaaInp" required>
+                            <option value="Ejército">Ejército</option>
+                            <option value="Armada">Armada</option>
+                            <option value="Fuerza Aérea">Fuerza Aérea</option>
+                        </select>
+                    </div>
+                    <div class="select-cont">
+                        <label for=""></label>
+                        <select name="" id="liceoInp" required>
+                            <option value="Liceo Militar General Espejo">Liceo Militar General Espejo</option>
+                            <option value="Liceo Militar General Lamadrid">Liceo Militar General Lamadrid</option>
+                            <option value="Liceo Militar General San Martin">Liceo Militar General San Martín</option>
+                            <option value="Liceo Militar General Belgrano">Liceo Militar General Belgrano</option>
+                            <option value="Liceo Militar General Paz">Liceo Militar General Paz</option>
+                            <option value="Liceo Militar General Roca">Liceo Militar General Roca</option>
+                            <option value="Liceo Militar Naval Almirante Storni">Liceo Militar Naval Almirante Storni</option>
+                            <option value="Liceo Militar Naval Almirante Brown">Liceo Militar Naval Almirante Brown</option>
+                            <option value="Liceo Aeronáutico Militar">Liceo Aeronáutico Militar</option>
+                        </select>
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="number" placeholder="Promoción" required>
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="text" placeholder="Profesión" required>
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="text" placeholder="Especialidad" required>
+                    </div>
+                    <div class="select-cont">
+                        <label for=""></label>
+                        <select name="" required>
+                            <option value="Informática">Informática</option>
+                        </select>
+                    </div>
+                    <div class="select-cont">
+                        <label for=""></label>
+                        <select name="" required>
+                            <option value="Buenos Aires">Buenos Aires</option>
+                            <option value="CABA">CABA</option>
+                            <option value="Catamarca">Catamarca</option>
+                            <option value="Chaco">Chaco</option>
+                            <option value="Chubut">Chubut</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Corrientes">Corrientes</option>
+                            <option value="Entre Ríos">Entre Ríos</option>
+                            <option value="Formosa">Formosa</option>
+                            <option value="Jujuy">Jujuy</option>
+                            <option value="La Pampa">La Pampa</option>
+                            <option value="La Rioja">La Rioja</option>
+                            <option value="Mendoza">Mendoza</option>
+                            <option value="Misiones">Misiones</option>
+                            <option value="Neuquén">Neuquén</option>
+                            <option value="Río Negro">Río Negro</option>
+                            <option value="Salta">Salta</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="San Luis">San Luis</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Santa Fe">Santa Fe</option>
+                            <option value="Santiago del Estero">Santiago del Estero</option>
+                            <option value="Tierra del Fuego">Tierra del Fuego</option>
+                            <option value="Tucumán">Tucumán</option>
+                        </select>
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="text" placeholder="Ciudad">
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="text" placeholder="Empresa (si aplica)">
+                    </div>
+                    <div class="input-cont">
+                        <label for=""></label>
+                        <input type="text" placeholder="Información general (si aplica)">
+                    </div>
+                    <div class="btn-login-cont">
+                        <button type="submit" id="btnRegister">REGISTRAR</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts CDN TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="../js/register.js" type="module"></script>
+    <script src="../js/sesionCheck.js" type="module"></script>
+</body>
+</html>
