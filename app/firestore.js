@@ -46,7 +46,7 @@ export class userModel {
             const consult = query(collection(db, "Users"), where("user_id", "==", id));
             const querySnapshot = await getDocs(consult);
             
-            if (!querySnapshot.docs) {
+            if (!querySnapshot.docs.length) {
                 return false;
             }
 
@@ -62,7 +62,8 @@ export class userModel {
     
     async addUser(user) {
         try {
-            await addDoc(collection(db, "Users"), user);
+            const userAdd = await addDoc(collection(db, "Users"), user);
+            return userAdd;
         }
         catch (err) {
             return err.message;
@@ -72,8 +73,24 @@ export class userModel {
 
     // actualizar usuarios con id
 
-    async updateUserWithID(){
+    async updateUserWithID(id, data){
+        try {
+            const consult = query(collection(db, "Users"), where("user_id", "==", id));
+            const querySnapshot = await getDocs(consult);
+            
+            if (!querySnapshot.docs) {
+                return false;
+            }
 
+            const docID = querySnapshot.docs[0].id;
+
+            const updateQuerySnapshot = await setDoc(doc(db, "Users", docID), data, {merge: true});
+
+            return true;
+        } 
+        catch (err) {
+            return err.message;
+        }
     }
 
 

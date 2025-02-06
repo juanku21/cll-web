@@ -32,24 +32,6 @@ export const db = getFirestore(app);
 
 
 
-// creamos funciones para operar la base de datos
-
-// leer turnos existentes
-
-// export const getTurnos = async () => {
-//     try{
-//         const turnos = await getDocs(collection(db, "Turnos"));
-//         let obtencion = [];
-//         turnos.forEach((turno) => {
-//             obtencion.push(turno.data());
-//         });
-//         return obtencion;
-//     }
-//     catch(e){
-//         console.log("Ha ocurrido un error", e.message);
-//     }
-// }
-
 // eliminar turnos existentes
 
 // export const deleteTurnos = async (fecha, hora) => {

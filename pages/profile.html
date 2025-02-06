@@ -70,7 +70,22 @@
                             <!-- Login link -->
                             <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
                                 <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
-                                    href="./pages/login.html" data-twe-nav-link-ref>Acceder</a>
+                                    href="./login.html" data-twe-nav-link-ref>Acceder</a>
+                            </li>
+                            <!-- Search link -->
+                            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0 hidden" data-twe-nav-item-ref>
+                                <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
+                                href="./search.html" data-twe-nav-link-ref>Buscar</a>
+                            </li>
+                            <!-- Profile link -->
+                            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0 hidden" data-twe-nav-item-ref>
+                                <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
+                                href="./profile.html" data-twe-nav-link-ref>Perfil</a>
+                            </li>
+                            <!-- Admin link -->
+                            <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0 hidden" data-twe-nav-item-ref>
+                                <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
+                                href="./admin.html" data-twe-nav-link-ref>Admin</a>
                             </li>
                         </ul>
                     </div>
@@ -82,6 +97,7 @@
                 <div class="title-form-cont">
                     <p>Perfil de Usuario</p>
                 </div>
+                <div id="avisoCont"></div>
                 <div class="logout-cont" id="logoutBtn">
                     <button>CERRAR SESIÓN</button>
                 </div>
@@ -95,15 +111,7 @@
                         <input type="text" disabled>
                     </div>
                     <div class="input-cont">
-                        <label for="">Correo Electrónico:</label>
-                        <input type="email" placeholder="Correo electrónico" disabled>
-                    </div>
-                    <div class="input-cont">
-                        <label for="">Contraseña:</label>
-                        <input type="password" placeholder="Contraseña" disabled>
-                    </div>
-                    <div class="input-cont">
-                        <label for="">Teléfono</label>
+                        <label for="">Teléfono:</label>
                         <input type="number" placeholder="Teléfono" disabled>
                     </div>
                     <div class="select-cont">

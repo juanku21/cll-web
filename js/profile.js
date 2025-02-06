@@ -1,48 +1,14 @@
 
-// // solicitud al servidor para obtener información de perfil
-
-// const reqProfile = async () => {
-//     const res = await fetch("../usuarios/profile", {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
-//         }
-//     })
-    
-//     return {
-//         status: res.status,
-//         statusText: res.statusText,
-//         ok: res.ok,
-//         content: await res.json()
-//     };
-// }
-
-
-// // solicitud al servidor para cambios en el perfil
-
-// const reqChangeData = async (data) => {
-//     const res = await fetch("../usuarios/profile", {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
-//         },
-//         body: JSON.stringify(data)
-//     })
-    
-//     return {
-//         status: res.status,
-//         statusText: res.statusText,
-//         ok: res.ok,
-//         content: await res.json()
-//     };
-// }
-
 
 import { auth } from "../app/firebase.js";
 import { signOut } from "../app/auth.js";
 import { showMessage } from "./showMessage.js";
+import { userModel } from "../app/firestore.js";
+
+
+// objeto que permite hacer uso de la base de datos Firestore 
+
+const pool = new userModel();
 
 
 // función auxiliar para menejar coherencia en formulario
@@ -163,8 +129,6 @@ checkEdit.addEventListener("change", () => {
         }
     }
 
-    console.log(edit)
-
 })
 
 
@@ -172,7 +136,7 @@ checkEdit.addEventListener("change", () => {
 
 const btnEdit = document.getElementById("btnEdit");
 
-btnEdit.addEventListener("click", (e) => {
+btnEdit.addEventListener("click", async (e) => {
     e.preventDefault();
 
     const campos = editProfileForm.elements;
@@ -180,22 +144,22 @@ btnEdit.addEventListener("click", (e) => {
     for (let i = 0; i < campos.length - 1; i++) {
         const element = campos[i];
         
-        if (element.value.toString().trim() == "" && (i != 2 && i != 12 && i != 13)) {
+        if (element.value.toString().trim() == "" && (i != 10 && i != 11)) {
             return alert("Debe completar todos los campos del formulario");
         }
         
     }
 
-    datosForm = {}
+    let datosForm = {}
 
-    const keysBodyReq = ["nombre", "email", "password", "telefono", "ffaa", "liceo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
+    const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
 
     for (let i = 0; i < keysBodyReq.length; i++) {
         const key = keysBodyReq[i];
 
         if (campos[i].value.toString().trim() == "") {
-            if (i == 12 || i == 13) {
-                datosForm[key] = campos[i].value
+            if (i == 10 || i == 11) {
+                datosForm[key] = campos[i].value;
             }
         }
         else{
@@ -206,17 +170,8 @@ btnEdit.addEventListener("click", (e) => {
 
     console.log(datosForm);
 
-    reqChangeData(datosForm).then(res => {
+    const res = await pool.updateUserWithID(auth.lastNotifiedUid, datosForm)
 
-        console.log(res.content);
-
-        if (!res.ok) {
-            return alert("Hubo un error al modificar el perfil. Vuelva a intentarlo");
-        }
-
-        alert("Datos modificados correctamente");
-        location.reload();
-
-    });
+    res == true ? showMessage("Datos actualizados", "success") : showMessage("Error al actualizar", "error");
 
 })
