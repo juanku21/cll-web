@@ -7,15 +7,9 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase
 // importaciones del servicio de autenticación
 import { getAuth } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
-
 // importaciones del servicio de base de datos
-// import { getFirestore, 
-//     collection, 
-//     doc,
-//     setDoc,
-//     getDocs,
-//     deleteDoc} 
-// from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js"
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -34,22 +28,11 @@ const analytics = getAnalytics(app);
 
 // inicializamos el servicios de autenticación y base de datos
 export const auth = getAuth(app);
-// const db = getFirestore(app);
+export const db = getFirestore(app);
 
 
 
 // creamos funciones para operar la base de datos
-
-// crear un turno
-
-// export const setTurno = async (objeto) =>{
-//     try{
-//         setDoc(doc(db, "Turnos", `${objeto.fecha} | ${objeto.hora}`), objeto); 
-//     }
-//     catch(e){
-//         console.log("Ha ocurrido un error", e.message);
-//     }
-// }
 
 // leer turnos existentes
 
