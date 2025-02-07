@@ -16,7 +16,7 @@ HOJA DE RUTA BACKEND
 4. Elaborar firestore data base
 5. Configurar permisos de base de datos
 7. Poner la parte de información como un text área
-8. Resolver tema de las fotos de perfil
+8. Resolver tema de las fotos de perfil (usar storage, basarse en video de fazt y poner ventana modal para subir foto en caso de cambio)
 9. Implementar google analytics
 10. Completar responsive del sitio
 11. Añadir etiquetas SEO
