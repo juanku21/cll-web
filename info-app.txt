@@ -15,7 +15,9 @@ HOJA DE RUTA BACKEND
 3. Terminar mensajes de cambio de confirmación, cambio de constraseña, etc
 4. Elaborar firestore data base
 5. Configurar permisos de base de datos
-6. Implementar google analytics
-7. Completar responsive del sitio
-8. Añadir etiquetas SEO
-9. Hacer OPG de la página
+7. Poner la parte de información como un text área
+8. Resolver tema de las fotos de perfil
+9. Implementar google analytics
+10. Completar responsive del sitio
+11. Añadir etiquetas SEO
+12. Hacer OPG de la página

@@ -1,20 +1,10 @@
 
 
-const reqAllUsers = async () => {
-    const res = await fetch("../usuarios", {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json',
-            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
-        }
-    })
-    
-    return {
-        status: res.status,
-        statusText: res.statusText,
-        ok: res.ok,
-        content: await res.json()
-    };
-}
+import { userModel } from "../app/firestore.js";
+
+// objeto que permite hacer uso de la base de datos Firestore 
+
+const pool = new userModel();
 
 
 // función auxiliar para menejar coherencia en formulario
@@ -165,14 +155,7 @@ addEventListener("DOMContentLoaded", async () => {
 
     // petición al servidor para obtener todos los usuarios
     
-    const res = await reqAllUsers();
-
-    if (!res.ok) {
-        return alert("Fallo la solicitud al servidor. Por favor espere");
-    }
-        
-    const usersData = res.content;
-
+    const usersData = await pool.getUsers();
 
     // logica de búsqueda
 
@@ -198,7 +181,6 @@ addEventListener("DOMContentLoaded", async () => {
 
     })
 
-    
 })
 
 

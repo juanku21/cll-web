@@ -1,7 +1,7 @@
 
 
 import { auth } from "../app/firebase.js";
-import { signOut } from "../app/auth.js";
+import { signOut, getUserID } from "../app/auth.js";
 import { showMessage } from "./showMessage.js";
 import { userModel } from "../app/firestore.js";
 
@@ -68,26 +68,35 @@ const editProfileForm = document.getElementById("editProfileForm");
 
 addEventListener("DOMContentLoaded", async (e) => {
 
-    const res = await reqProfile();
+    const avisoCont = document.querySelector("#avisoCont");
 
-    if (!res.ok) {
-        console.log(res.content);
-        return alert("Fallo la solicitud al servidor. Por favor espere");
-    }
+    
+    try {
+
+        let profileData = await pool.getUserWithID(getUserID());
+    
+        profileData = profileData.data();
         
-    const profileData = res.content;
+        // rellenamos el formulario de edición con la información preexistente
 
-    // rellenamos el formulario de edición con la información preexistente
+        const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
 
-    const claves = Object.keys(profileData);
+        for (let i = 0; i < editProfileForm.elements.length; i++) {
+            const element = editProfileForm.elements[i];
 
-    for (let i = 0; i < editProfileForm.elements.length; i++) {
-        const element = editProfileForm.elements[i];
+            if (profileData[keysBodyReq[i]] === undefined) {
+                element.value = "";
+                avisoCont.innerHTML = `<p>Debe completar el formulario con los datos para poder usar el sitio</p>`;
+            }
+            else{
+                element.value = profileData[keysBodyReq[i]];
+            }
 
-        if (i != 2){
-            element.value = profileData[claves[i+1]];
         }
 
+    } 
+    catch (err) {
+        showMessage(err.message, "error");
     }
 
 })
@@ -168,10 +177,14 @@ btnEdit.addEventListener("click", async (e) => {
 
     }
 
-    console.log(datosForm);
 
-    const res = await pool.updateUserWithID(auth.lastNotifiedUid, datosForm)
+    const res = await pool.updateUserWithID(getUserID(), datosForm)
 
     res == true ? showMessage("Datos actualizados", "success") : showMessage("Error al actualizar", "error");
 
+    setTimeout(() => {
+        window.location.reload();
+    }, 1000)
+
 })
+

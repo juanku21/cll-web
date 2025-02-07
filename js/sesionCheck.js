@@ -15,7 +15,7 @@ const signInOptionsBasic = () => {
     
     let navbar = document.querySelector("#navbarSupportedContent2").children[0];
     navbar.children[4].classList.add("hidden");
-    navbar.children[5].classList.remove("hidden");
+    navbar.children[6].classList.remove("hidden");
 
     const actual = location.href;
 
@@ -79,23 +79,30 @@ const logOutOptions = () => {
 
 onAuthStateChanged(auth, async (user) =>{
 
-    if (user) {    
+    if (user) {
+            
         signInOptionsBasic();
         const userData = await pool.getUserWithID(user.uid);
 
         if (userData) {
             
-            if (userData["aceptado"] == true && userData["rol"] == "admin") {
+            if (userData.data()["aceptado"] == true && userData.data()["rol"] == "admin") {
                 signInOptionsAdmin();
             }
-            else if (userData["aceptado"] == true) {
+            else if (userData.data()["aceptado"] == true) {
                 signInOptionsFull();
             }
 
         }
         else{
-            const avisoCont = document.querySelector("#avisoCont");
-            avisoCont.innerHTML += `<p>Debe completar el formulario con los datos para poder usar el sitio</p>`
+            const newUser = {
+                userID: user.uid,
+                aceptado: false,
+                role: "user"
+            }
+
+            const nuevo = await pool.addUser(newUser);
+            console.log(nuevo);
         }
     }
     else{

@@ -43,14 +43,14 @@ export class userModel {
 
     async getUserWithID(id){
         try {
-            const consult = query(collection(db, "Users"), where("user_id", "==", id));
+            const consult = query(collection(db, "Users"), where("userID", "==", id));
             const querySnapshot = await getDocs(consult);
             
-            if (!querySnapshot.docs.length) {
+            if (!querySnapshot) {
                 return false;
             }
 
-            return querySnapshot.docs[0].data();
+            return querySnapshot.docs[0];
         } 
         catch (err) {
             return err.message;
@@ -75,7 +75,7 @@ export class userModel {
 
     async updateUserWithID(id, data){
         try {
-            const consult = query(collection(db, "Users"), where("user_id", "==", id));
+            const consult = query(collection(db, "Users"), where("userID", "==", id));
             const querySnapshot = await getDocs(consult);
             
             if (!querySnapshot.docs) {
