@@ -79,6 +79,11 @@ addEventListener("DOMContentLoaded", async (e) => {
         
         // rellenamos el formulario de edición con la información preexistente
 
+        console.log(profileData);
+
+        let profileIMG = document.getElementById("profileIMG");
+        profileIMG.setAttribute("src", profileData["photoURL"]);
+
         const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
 
         for (let i = 0; i < editProfileForm.elements.length - 1; i++) {

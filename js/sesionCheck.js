@@ -80,7 +80,7 @@ const logOutOptions = () => {
 onAuthStateChanged(auth, async (user) =>{
 
     if (user) {
-            
+
         signInOptionsBasic();
         const userData = await pool.getUserWithID(user.uid);
 
@@ -98,7 +98,8 @@ onAuthStateChanged(auth, async (user) =>{
             const newUser = {
                 userID: user.uid,
                 aceptado: false,
-                role: "user"
+                role: "user",
+                photoURL: user.photoURL
             }
 
             const nuevo = await pool.addUser(newUser);

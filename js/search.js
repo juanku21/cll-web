@@ -149,11 +149,12 @@ ffaaInp.addEventListener("change", (e) => {
 // función para generar cards de usuarios
 
 const createUserCard = (data) => {
+    console.log(data);
     const component = `
     <div class="profile-card">
         <div class="img-profile-card">
             <div>
-                <img src="../assets/logo-usuario.png" alt="foto-de-perfil-usuario">
+                <img src="${data["photoURL"]}" alt="foto-de-perfil-usuario">
             </div>
         </div>
         <div class="content-profile-card">
@@ -196,30 +197,38 @@ addEventListener("DOMContentLoaded", async () => {
 
     searchInp.addEventListener("input", (e) => {
         const dato = searchInp.value;
-        
-        let results = searchInfo(usersData, dato);
-
-        const selects = document.getElementsByTagName("select");
-
-        if (filter == true) {
-
-            for (let select of selects) {
-                results = filterInfo(results, {
-                    key: select.name,
-                    value: select.value
-                });
-            }
-
-        }
-
-        console.log(results);
 
         const resultsSearch = document.querySelector("#resultsSearch");
+        resultsSearch.innerHTML = ``;
 
-        for (let i = 0; i < results.length; i++) {
-            const userData = results[i];
-            console.log(userData);
-            resultsSearch.innerHTML += createUserCard(userData);
+        if (dato.length != 0) {
+
+            let results = searchInfo(usersData, dato);
+
+            const selects = document.getElementsByTagName("select");
+
+            if (filter == true) {
+
+                for (let select of selects) {
+                    results = filterInfo(results, {
+                        key: select.name,
+                        value: select.value
+                    });
+                }
+
+            }
+
+            if (results.length != 0) {
+                for (let i = 0; i < results.length; i++) {
+                    const userData = results[i];
+                    console.log(userData);
+                    resultsSearch.innerHTML += createUserCard(userData);
+                }
+            }
+            else{
+                resultsSearch.innerHTML += `<p>Sin resultados de búsqueda</p>`
+            }
+        
         }
 
     })
