@@ -81,15 +81,15 @@ addEventListener("DOMContentLoaded", async (e) => {
 
         const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
 
-        for (let i = 0; i < editProfileForm.elements.length; i++) {
+        for (let i = 0; i < editProfileForm.elements.length - 1; i++) {
             const element = editProfileForm.elements[i];
 
-            if (profileData[keysBodyReq[i]] === undefined) {
-                element.value = "";
-                avisoCont.innerHTML = `<p>Debe completar el formulario con los datos para poder usar el sitio</p>`;
+            if (profileData[keysBodyReq[i]] !== undefined) {
+                element.value = profileData[keysBodyReq[i]];
             }
             else{
-                element.value = profileData[keysBodyReq[i]];
+                element.value = "";
+                avisoCont.innerHTML = `<p>Debe completar el formulario con los datos para poder usar el sitio</p>`;
             }
 
         }
@@ -101,6 +101,13 @@ addEventListener("DOMContentLoaded", async (e) => {
 
 })
 
+// cambiar foto de perfil
+
+const fileInput = document.querySelector("#fileInput");
+
+fileInput.addEventListener("change", e => {
+    console.log(e.target.files[0]);
+})
 
 // cerrar sesión del usuario
 
@@ -154,7 +161,7 @@ btnEdit.addEventListener("click", async (e) => {
         const element = campos[i];
         
         if (element.value.toString().trim() == "" && (i != 10 && i != 11)) {
-            return alert("Debe completar todos los campos del formulario");
+            return showMessage("Debe completar todos los datos", "error");
         }
         
     }

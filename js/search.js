@@ -146,6 +146,41 @@ ffaaInp.addEventListener("change", (e) => {
 })
 
 
+// función para generar cards de usuarios
+
+const createUserCard = (data) => {
+    const component = `
+    <div class="profile-card">
+        <div class="img-profile-card">
+            <div>
+                <img src="../assets/logo-usuario.png" alt="foto-de-perfil-usuario">
+            </div>
+        </div>
+        <div class="content-profile-card">
+            <div>
+                <div>
+                    <p>${data["nombre"]}</p>
+                </div>
+                <div>
+                    <p><b>Teléfono: </b>${data["telefono"]}</p>
+                    <p><b>FFAA: </b>${data["ffaa"]}</p>
+                    <p><b>Liceo: </b>${data["liceo"]}</p>
+                    <p><b>Promocion: </b>${data["promocion"]}</p>
+                    <p><b>Profesión: </b>${data["profesion"]}</p>
+                    <p><b>Especialidad: </b>${data["especialidad"]}</p>
+                    <p><b>Rubro: </b>${data["rubro"]}</p>
+                    <p><b>Provincia: </b>${data["provincia"]}</p>
+                    <p><b>Ciudad: </b>${data["ciudad"]}</p>
+                    <p><b>Empresa: </b>${data["empresa"]}</p>
+                    <p><b>Info: </b>${data["info"]}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+    return component;
+}
+
 
 // evento disparado al cargar la página
 
@@ -177,7 +212,15 @@ addEventListener("DOMContentLoaded", async () => {
 
         }
 
-        console.log(results)
+        console.log(results);
+
+        const resultsSearch = document.querySelector("#resultsSearch");
+
+        for (let i = 0; i < results.length; i++) {
+            const userData = results[i];
+            console.log(userData);
+            resultsSearch.innerHTML += createUserCard(userData);
+        }
 
     })
 

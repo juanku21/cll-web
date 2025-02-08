@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
     <!-- Custom JS for sesión -->
     <script src="../js/sesionCheck.js" type="module"></script>
 </head>
+
 <body>
     <div class="organizador">
         <header>
@@ -77,17 +79,17 @@
                             <!-- Search link -->
                             <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0 hidden" data-twe-nav-item-ref>
                                 <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
-                                href="./search.html" data-twe-nav-link-ref>Buscar</a>
+                                    href="./search.html" data-twe-nav-link-ref>Buscar</a>
                             </li>
                             <!-- Profile link -->
                             <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0 hidden" data-twe-nav-item-ref>
                                 <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
-                                href="./profile.html" data-twe-nav-link-ref>Perfil</a>
+                                    href="./profile.html" data-twe-nav-link-ref>Perfil</a>
                             </li>
                             <!-- Admin link -->
                             <li class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0 hidden" data-twe-nav-item-ref>
                                 <a class="p-0 pb-1 text-white transition duration-200 hover:text-amber-400 hover:ease-in-out hover:border-b-2 hover:border-amber-400 focus:text-amber-400 active:text-amber-400 motion-reduce:transition-none lg:px-2"
-                                href="./admin.html" data-twe-nav-link-ref>Admin</a>
+                                    href="./admin.html" data-twe-nav-link-ref>Admin</a>
                             </li>
                         </ul>
                     </div>
@@ -98,6 +100,62 @@
             <section class="form-section">
                 <div class="title-form-cont">
                     <p>Perfil de Usuario</p>
+                </div>
+                <div class="profile-avatar">
+                    <div>
+                        <div class="cont-profile-img">
+                            <img src="../assets/logo-usuario.png" alt="foto-de-perfil-usuario">
+                        </div>
+                    </div>
+                    <div class="cont-edit-profile">
+                        <p data-twe-toggle="modal" data-twe-target="#exampleModal" data-twe-ripple-init
+                            data-twe-ripple-color="light">Editar foto de perfil</p>
+                    </div>
+                    <div>
+                        <div data-twe-modal-init
+                            class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+                            id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div data-twe-modal-dialog-ref
+                                class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]">
+                                <div
+                                    class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-4 outline-none dark:bg-surface-dark">
+                                    <div
+                                        class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 p-4 dark:border-white/10">
+                                        <h5 class="text-xl font-medium leading-normal text-surface dark:text-white"
+                                            id="exampleModalLabel">
+                                            Subir foto de Perfil
+                                        </h5>
+                                        <button type="button"
+                                            class="box-content rounded-none border-none text-neutral-500 hover:text-neutral-800 hover:no-underline focus:text-neutral-800 focus:opacity-100 focus:shadow-none focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-300 dark:focus:text-neutral-300"
+                                            data-twe-modal-dismiss aria-label="Close">
+                                            <span class="[&>svg]:h-6 [&>svg]:w-6">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="relative flex-auto p-4" data-twe-modal-body-ref>
+                                        <input type="file" name="Foto de Perfil" id="fileInput">
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div
+                                        class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 p-4 dark:border-white/10">
+                                        <button type="button"
+                                            class="ms-1 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                            data-twe-ripple-init data-twe-ripple-color="light">
+                                            Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="avisoCont"></div>
                 <div class="logout-cont" id="logoutBtn">
@@ -133,8 +191,10 @@
                             <option value="Liceo Militar General Belgrano">Liceo Militar General Belgrano</option>
                             <option value="Liceo Militar General Paz">Liceo Militar General Paz</option>
                             <option value="Liceo Militar General Roca">Liceo Militar General Roca</option>
-                            <option value="Liceo Militar Naval Almirante Storni">Liceo Militar Naval Almirante Storni</option>
-                            <option value="Liceo Militar Naval Almirante Brown">Liceo Militar Naval Almirante Brown</option>
+                            <option value="Liceo Militar Naval Almirante Storni">Liceo Militar Naval Almirante Storni
+                            </option>
+                            <option value="Liceo Militar Naval Almirante Brown">Liceo Militar Naval Almirante Brown
+                            </option>
                             <option value="Liceo Aeronáutico Militar">Liceo Aeronáutico Militar</option>
                         </select>
                     </div>
@@ -218,7 +278,7 @@
                         </svg>
                     </span>
                 </a>
-    
+
                 <a href="#!" type="button"
                     class="rounded-full p-3 bg-blue-700 uppercase leading-normal text-surface shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 text-white"
                     data-twe-ripple-init data-twe-ripple-color="light">
@@ -230,7 +290,7 @@
                         </svg>
                     </span>
                 </a>
-    
+
                 <a href="#!" type="button"
                     class="rounded-full p-3 bg-blue-700 uppercase leading-normal text-surface shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 text-white"
                     data-twe-ripple-init data-twe-ripple-color="light">
@@ -242,7 +302,7 @@
                         </svg>
                     </span>
                 </a>
-    
+
                 <a href="#!" type="button"
                     class="rounded-full p-3 bg-blue-700 uppercase leading-normal text-surface shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 text-white"
                     data-twe-ripple-init data-twe-ripple-color="light">
@@ -254,7 +314,7 @@
                         </svg>
                     </span>
                 </a>
-    
+
                 <a href="#!" type="button"
                     class="rounded-full p-3 bg-blue-700 uppercase leading-normal text-surface shadow-dark-3 shadow-black/30 transition duration-150 ease-in-out hover:shadow-dark-1 focus:shadow-dark-1 focus:outline-none focus:ring-0 active:shadow-1 text-white"
                     data-twe-ripple-init data-twe-ripple-color="light">
@@ -266,9 +326,9 @@
                         </svg>
                     </span>
                 </a>
-    
+
             </div>
-    
+
             <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
             <div class="mx-6 py-10 text-center md:text-left">
                 <div class="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
@@ -282,10 +342,12 @@
                     </div>
                     <!-- Contact section -->
                     <div>
-                        <h6 class="mb-6 color-link flex justify-center font-semibold uppercase md:justify-start lg:text-xl">
+                        <h6
+                            class="mb-6 color-link flex justify-center font-semibold uppercase md:justify-start lg:text-xl">
                             Contacto
                         </h6>
-                        <p class="mb-4 text-xs flex items-center justify-center md:justify-start md:text-sm lg:text-lg color-link">
+                        <p
+                            class="mb-4 text-xs flex items-center justify-center md:justify-start md:text-sm lg:text-lg color-link">
                             <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange">
                                     <path
@@ -296,7 +358,8 @@
                             </span>
                             Ciudad de Mendoza, Mendoza, Argentina
                         </p>
-                        <p class="mb-4 text-xs flex items-center justify-center md:justify-start md:text-sm lg:text-lg color-link">
+                        <p
+                            class="mb-4 text-xs flex items-center justify-center md:justify-start md:text-sm lg:text-lg color-link">
                             <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange">
                                     <path
@@ -307,7 +370,8 @@
                             </span>
                             comunidadlaboralliceista@gmail.com
                         </p>
-                        <p class="mb-4 text-sm flex items-center justify-center md:justify-start md:text-sm lg:text-lg color-link">
+                        <p
+                            class="mb-4 text-sm flex items-center justify-center md:justify-start md:text-sm lg:text-lg color-link">
                             <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange">
                                     <path fill-rule="evenodd"
@@ -317,7 +381,8 @@
                             </span>
                             + 54 9 261 543-3552
                         </p>
-                        <p class="flex text-sm items-center justify-center md:justify-start md:text-base lg:text-lg color-link">
+                        <p
+                            class="flex text-sm items-center justify-center md:justify-start md:text-base lg:text-lg color-link">
                             <span class="me-3 [&>svg]:h-5 [&>svg]:w-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange">
                                     <path fill-rule="evenodd"
@@ -330,7 +395,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!--Copyright section-->
             <div class="bg-black/5 text-base p-6 text-center color-link">
                 <span class="text-sm lg:text-base">© 2025 Copyright: CLL</span>
@@ -347,4 +412,5 @@
     <!-- Custom Scripts -->
     <script src="../js/profile.js" type="module"></script>
 </body>
+
 </html>
