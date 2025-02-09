@@ -470,6 +470,45 @@ footer {
   color: #F6F4F0;
 }
 
+.temporal-flyers {
+  width: 100%;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flyers-title {
+  margin-top: 4%;
+  margin-bottom: 6%;
+}
+.flyers-title h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.flyers-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flyers-card {
+  width: 270px;
+  height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 6%;
+}
+.flyers-card img {
+  width: 100%;
+  height: 100%;
+}
+
 main {
   width: 100%;
   display: flex;
@@ -491,7 +530,7 @@ main {
   height: 140px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: aqua;
+  background-color: #D9D9D9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -575,6 +614,42 @@ main {
   padding: 4%;
 }
 .input-cont input::placeholder {
+  font-size: 14px;
+}
+
+.input-cont {
+  width: 80%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+.input-cont input {
+  width: 100%;
+  height: 36px;
+  border-width: 0.8px;
+  border-color: rgb(94, 94, 94);
+  border-radius: 8px;
+  margin-top: 1%;
+  padding: 4%;
+}
+.input-cont input::placeholder {
+  font-size: 14px;
+}
+
+.text-area-cont {
+  width: 80%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+.text-area-cont textarea {
+  width: 100%;
+  height: 200px;
+  border-width: 0.8px;
+  border-color: rgb(94, 94, 94);
+  border-radius: 8px;
+  margin-top: 1%;
+  padding: 4%;
+}
+.text-area-cont textarea::placeholder {
   font-size: 14px;
 }
 
@@ -726,6 +801,11 @@ select:disabled {
   background-color: rgb(221, 221, 221);
 }
 
+textarea:disabled {
+  cursor: not-allowed;
+  background-color: rgb(221, 221, 221);
+}
+
 @media (min-width: 375px) {
   header {
     margin-bottom: 1.2%;
@@ -773,6 +853,28 @@ select:disabled {
   .partners-section div h2 {
     font-size: 18px;
   }
+  .temporal-flyers {
+    margin-top: 8%;
+    margin-bottom: 8%;
+  }
+  .flyers-title {
+    margin-top: 4%;
+    margin-bottom: 6%;
+  }
+  .flyers-title h2 {
+    font-size: 18px;
+  }
+  .flyers-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flyers-card {
+    width: 300px;
+    height: 380px;
+    margin-bottom: 6%;
+  }
 }
 @media (min-width: 425px) {
   .home-section div h1 {
@@ -813,6 +915,28 @@ select:disabled {
   .access-section div a {
     height: 36px;
     font-size: 16px;
+  }
+  .temporal-flyers {
+    margin-top: 8%;
+    margin-bottom: 8%;
+  }
+  .flyers-title {
+    margin-top: 4%;
+    margin-bottom: 6%;
+  }
+  .flyers-title h2 {
+    font-size: 18px;
+  }
+  .flyers-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flyers-card {
+    width: 310px;
+    height: 400px;
+    margin-bottom: 6%;
   }
 }
 @media (min-width: 768px) {
@@ -930,6 +1054,28 @@ select:disabled {
   }
   .partners-section div h2 {
     font-size: 20px;
+  }
+  .temporal-flyers {
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+  .flyers-title {
+    margin-top: 4%;
+    margin-bottom: 6%;
+  }
+  .flyers-title h2 {
+    font-size: 20px;
+  }
+  .flyers-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flyers-card {
+    width: 400px;
+    height: 500px;
+    margin-bottom: 6%;
   }
   footer {
     margin-top: 0.7%;
@@ -1071,6 +1217,30 @@ select:disabled {
   .partners-section div h2 {
     font-size: 24px;
   }
+  .temporal-flyers {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  .flyers-title {
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+  .flyers-title h2 {
+    font-size: 24px;
+  }
+  .flyers-cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+  }
+  .flyers-card {
+    width: 420px;
+    height: 530px;
+    margin-bottom: 4%;
+  }
   footer {
     margin-top: 0.6%;
     width: 99%;
@@ -1185,7 +1355,7 @@ select:disabled {
   .feedback-card div:nth-child(2) {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .feedback-card div:nth-child(2) h4 {
     font-size: 20px;
@@ -1220,6 +1390,30 @@ select:disabled {
   }
   .partners-section div h2 {
     font-size: 30px;
+  }
+  .temporal-flyers {
+    margin-top: 4%;
+    margin-bottom: 3%;
+  }
+  .flyers-title {
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+  .flyers-title h2 {
+    font-size: 30px;
+  }
+  .flyers-cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+  }
+  .flyers-card {
+    width: 380px;
+    height: 520px;
+    margin-bottom: 4%;
   }
   footer {
     margin-top: 0.4%;
@@ -1366,6 +1560,30 @@ select:disabled {
     width: 44%;
     height: 48px;
     font-size: 20px;
+  }
+  .temporal-flyers {
+    margin-top: 3%;
+    margin-bottom: 2%;
+  }
+  .flyers-title {
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+  .flyers-title h2 {
+    font-size: 30px;
+  }
+  .flyers-cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+  }
+  .flyers-card {
+    width: 400px;
+    height: 530px;
+    margin-bottom: 4%;
   }
   footer {
     margin-top: 0.2%;

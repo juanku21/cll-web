@@ -1,5 +1,21 @@
 
 
+// FUNCIÓN PARA GENERAR FLYERS DINÁMICAMENTE
+
+const createFlyers = async () => {
+    const flyersCont = document.querySelector(".flyers-cont");
+    let data = await fetch("./json/flyers.json");
+    data = await data.json();
+
+    for (const flyer of data) {
+        flyersCont.innerHTML += `
+            <div class="flyers-card">
+                <img src="${flyer["img"]}" alt="${flyer["alt"]}">
+            </div>
+        ` 
+    }
+}
+
 
 // CÓDIGO DEL CARRUSEL DE IMÁGENES
 
@@ -105,8 +121,6 @@ for (let i = 0; i < contIndicators.length; i++) {
 
 // código destinado a resolver el problema de la sección de testimonios
 
-
-
 addEventListener("DOMContentLoaded", (e) => {
 
     let feedback = document.getElementById("feedback").children[1];
@@ -133,4 +147,6 @@ addEventListener("DOMContentLoaded", (e) => {
         }
 
     })
+
+    createFlyers();
 })

@@ -17,7 +17,12 @@ HOJA DE RUTA BACKEND
 5. Configurar permisos de base de datos
 7. Poner la parte de información como un text área
 8. Resolver tema de las fotos de perfil (usar storage, basarse en video de fazt y poner ventana modal para subir foto en caso de cambio)
-9. Implementar google analytics
-10. Completar responsive del sitio
-11. Añadir etiquetas SEO
-12. Hacer OPG de la página
+9. Terminar página de administración
+10. Añadir flyers en página de inicio
+11. Arreglar tema de restablecimineto de constraseña
+12. Añadir banner de patrocinadores
+13. Adecuar formulario para docentes o personal militar/civil
+13. Implementar google analytics
+14. Completar responsive del sitio
+15. Añadir etiquetas SEO
+16. Hacer OPG de la página

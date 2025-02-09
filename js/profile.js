@@ -77,9 +77,8 @@ addEventListener("DOMContentLoaded", async (e) => {
     
         profileData = profileData.data();
         
+        
         // rellenamos el formulario de edición con la información preexistente
-
-        console.log(profileData);
 
         let profileIMG = document.getElementById("profileIMG");
         profileIMG.setAttribute("src", profileData["photoURL"]);

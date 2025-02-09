@@ -81,6 +81,8 @@ onAuthStateChanged(auth, async (user) =>{
 
     if (user) {
 
+        console.log(user.photoURL)
+
         signInOptionsBasic();
         const userData = await pool.getUserWithID(user.uid);
 

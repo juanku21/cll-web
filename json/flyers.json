@@ -1,0 +1,22 @@
+[
+    {
+        "img": "./assets/flyer-1.png",
+        "alt": "clases-particulares-computación"
+    },
+    {
+        "img": "./assets/flyer-2.png",
+        "alt": "trabajo-atención-al-público"
+    },
+    {
+        "img": "./assets/flyer-3.png",
+        "alt": "clases-particulares-nivel-primario-secundario"
+    },
+    {
+        "img": "./assets/flyer-4.png",
+        "alt": "clases-particulares-ciencias-sociales-y-geografía"
+    },
+    {
+        "img": "./assets/flyer-5.png",
+        "alt": "clases-particulares-música"
+    }
+]
