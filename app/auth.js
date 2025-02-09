@@ -12,7 +12,8 @@ import {
     browserSessionPersistence, 
     onAuthStateChanged, 
     GoogleAuthProvider,
-    signInWithPopup } 
+    signInWithPopup,
+    deleteUser} 
 from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 
@@ -33,4 +34,5 @@ export {
     onAuthStateChanged,
     GoogleAuthProvider,
     signInWithPopup,
-    signOut };
+    signOut,
+    deleteUser };

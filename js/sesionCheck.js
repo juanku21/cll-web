@@ -19,7 +19,7 @@ const signInOptionsBasic = () => {
 
     const actual = location.href;
 
-    if (actual.includes("/login.html") || actual.includes("/register.html")) {
+    if (actual.includes("/login.html") || actual.includes("/registerLogin.html") || actual.includes("/search.html") || actual.includes("/admin.html")) {
         location.href = "../pages/profile.html";
     }
 
@@ -35,7 +35,7 @@ const signInOptionsFull = () => {
 
     const actual = location.href;
 
-    if (actual.includes("/login.html") || actual.includes("/register.html")) {
+    if (actual.includes("/login.html") || actual.includes("/registerLogin.html") || actual.includes("/admin.html")) {
         location.href = "../pages/profile.html";
     }
 
@@ -52,7 +52,7 @@ const signInOptionsAdmin = () => {
 
     const actual = location.href;
     
-    if (actual.includes("/login.html") || actual.includes("/register.html")) {
+    if (actual.includes("/login.html") || actual.includes("/registerLogin.html")) {
         location.href = "../pages/profile.html";
     }
 
@@ -81,14 +81,13 @@ onAuthStateChanged(auth, async (user) =>{
 
     if (user) {
 
-        console.log(user.photoURL)
-
-        signInOptionsBasic();
         const userData = await pool.getUserWithID(user.uid);
+
+        console.log(user.photoURL);
 
         if (userData) {
             
-            if (userData.data()["aceptado"] == true && userData.data()["rol"] == "admin") {
+            if (userData.data()["aceptado"] == true && userData.data()["role"] == "admin") {
                 signInOptionsAdmin();
             }
             else if (userData.data()["aceptado"] == true) {
@@ -97,15 +96,17 @@ onAuthStateChanged(auth, async (user) =>{
 
         }
         else{
+            signInOptionsBasic();
+
             const newUser = {
                 userID: user.uid,
                 aceptado: false,
                 role: "user",
+                email: user.email,
                 photoURL: user.photoURL
             }
 
             const nuevo = await pool.addUser(newUser);
-            console.log(nuevo);
         }
     }
     else{

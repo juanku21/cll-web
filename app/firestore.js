@@ -39,6 +39,30 @@ export class userModel {
     }
 
 
+    // obtener usuarios no aceptados
+
+    async getUsersNotAccepted(){
+        try {
+            const consult = query(collection(db, "Users"), where("aceptado", "==", false));
+            const querySnapshot = await getDocs(consult);
+            let users = [];
+            
+            if (!querySnapshot) {
+                return false;
+            }
+
+            querySnapshot.docs.forEach((user) => {
+                users.push(user.data());
+            });
+
+            return users;
+        } 
+        catch (err) {
+            return err.message;
+        }
+    }
+
+
     // obtener usuario con id
 
     async getUserWithID(id){
@@ -98,7 +122,18 @@ export class userModel {
 
     async deleteUserWithID(id){
         try{
-            deleteDoc(doc(db, "Users", `${fecha} | ${hora}`))
+            const consult = query(collection(db, "Users"), where("userID", "==", id));
+            const querySnapshot = await getDocs(consult);
+            
+            if (!querySnapshot.docs) {
+                return false;
+            }
+
+            const docID = querySnapshot.docs[0].id;
+
+            const deleteQuerySnapshot = await deleteDoc(doc(db, "Users", docID));
+
+            return true;
         }
         catch(err){
             console.log("Ha ocurrido un error", err.message);

@@ -32,13 +32,3 @@ export const db = getFirestore(app);
 
 
 
-// eliminar turnos existentes
-
-// export const deleteTurnos = async (fecha, hora) => {
-//     try{
-//         deleteDoc(doc(db, "Turnos", `${fecha} | ${hora}`))
-//     }
-//     catch(e){
-//         console.log("Ha ocurrido un error", e.message);
-//     }
-// }

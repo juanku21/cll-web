@@ -163,6 +163,7 @@ const createUserCard = (data) => {
                     <p>${data["nombre"]}</p>
                 </div>
                 <div>
+                    <p><b>E-Mail: </b>${data["email"]}</p>
                     <p><b>Teléfono: </b>${data["telefono"]}</p>
                     <p><b>FFAA: </b>${data["ffaa"]}</p>
                     <p><b>Liceo: </b>${data["liceo"]}</p>

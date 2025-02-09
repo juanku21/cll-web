@@ -556,8 +556,9 @@ main {
 
 #avisoCont p {
   width: 80%;
-  font-size: 14px;
+  font-size: 12px;
   height: 60px;
+  color: black;
   background-color: #F2972B;
   padding: 2% 4%;
   text-align: center;
@@ -574,6 +575,7 @@ main {
   width: 100%;
   height: 36px;
   background-color: red;
+  font-size: 14px;
   color: white;
   border-radius: 8px;
 }
@@ -804,6 +806,49 @@ select:disabled {
 textarea:disabled {
   cursor: not-allowed;
   background-color: rgb(221, 221, 221);
+}
+
+.admin-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.advertencia-vista {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin-top: 5%;
+}
+.advertencia-vista div svg {
+  width: 150px;
+  height: 150px;
+}
+.advertencia-vista p {
+  text-align: center;
+  font-size: 16px;
+}
+
+.accept-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+}
+.accept-options div svg {
+  width: 48px;
+  height: 48px;
+}
+.accept-options div svg:hover {
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
 }
 
 @media (min-width: 375px) {

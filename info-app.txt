@@ -26,3 +26,4 @@ HOJA DE RUTA BACKEND
 14. Completar responsive del sitio
 15. Añadir etiquetas SEO
 16. Hacer OPG de la página
+17. Añadir rubros restantes

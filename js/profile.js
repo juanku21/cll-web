@@ -77,6 +77,7 @@ addEventListener("DOMContentLoaded", async (e) => {
     
         profileData = profileData.data();
         
+        console.log(profileData);
         
         // rellenamos el formulario de edición con la información preexistente
 
