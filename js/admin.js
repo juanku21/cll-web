@@ -2,7 +2,6 @@
 
 import { userModel } from "../app/firestore.js";
 import { showMessage } from "./showMessage.js";
-import { deleteUser } from "../app/auth.js";
 
 // objeto que permite hacer uso de la base de datos Firestore 
 
@@ -34,12 +33,8 @@ addEventListener("DOMContentLoaded", async () => {
 
             if (i != 0) {
 
-                if (user[campos[i - 1]] === undefined) {
-                    campo.innerText = "No proporcionado";
-                }
-                else{
-                    campo.innerText = user[campos[i - 1]];
-                }
+                user[campos[i - 1]] === undefined ? campo.innerText = "No proporcionado" : campo.innerText = user[campos[i - 1]];
+
             }
             else{
                 campo.innerText = i + 1;
@@ -85,11 +80,13 @@ addEventListener("DOMContentLoaded", async () => {
 
         eliminar.addEventListener("click", async () => {
 
-            const seguro = confirm(`Seguro desea eliminar a ${user["nombre"]}`);
+            let nombreUser;
+            user["nombre"] === undefined ? nombreUser = "Sin nombre" : nombreUser = user["nombre"];
+            const seguro = confirm(`Seguro desea eliminar a ${nombreUser}`);
 
             if (seguro) {
                 eliminar.parentElement.parentElement.parentElement.remove();
-                const res = await pool.updateUserWithID(user["userID"], {advertencia: "ELIMINAR"});
+                const res = await pool.updateUserWithID(user["userID"], {aceptado: "ELIMINAR"});
                 res == true ? showMessage("Usuario eliminado", "success") : showMessage("Error al aceptar", "error");
             }
         })

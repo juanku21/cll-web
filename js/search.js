@@ -99,19 +99,24 @@ btnSFilters.addEventListener("click", (e) => {
 
 // control del uso de filtro de búsqueda
 
-let filter = false;
-const checkFilter = document.getElementById("checkFilter");
+let filter = [false, false, false, false];
 
-checkFilter.addEventListener("change", () => {
 
-    if (filter) {
-        filter = false;
-    }
-    else{
-        filter = true;
-    }
+const filters = document.querySelectorAll(".category-filter");
+for (let i = 0; i < filters.length; i++) {
+    
+    filters[i].addEventListener("change", () => {
+        if (filter[i]) {
+            filter[i] = false;
+        }
+        else{
+            filter[i] = true;
+        }
 
-})
+        console.log(filter);
+    })
+    
+}
 
 
 // lógica para manejar coherencia entre FFAA y respectivos liceos
@@ -208,15 +213,18 @@ addEventListener("DOMContentLoaded", async () => {
 
             const selects = document.getElementsByTagName("select");
 
-            if (filter == true) {
+            // activación de filtrado
 
-                for (let select of selects) {
+            for (let i = 0; i < selects.length; i++) {
+                const select = selects[i];
+
+                if (filter[i]) {
                     results = filterInfo(results, {
                         key: select.name,
                         value: select.value
                     });
                 }
-
+                
             }
 
             if (results.length != 0) {
@@ -236,14 +244,3 @@ addEventListener("DOMContentLoaded", async () => {
 
 })
 
-
-
-
-
-
-// const selects = document.getElementsByTagName("select");
-
-// for (let select of selects) {
-//     select.addEventListener("change", (e) => {
-//     console.log("jajaja");
-// })}

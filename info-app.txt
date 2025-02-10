@@ -1,29 +1,22 @@
 
-TESTIMONIOS PARA LA SECCIÓN DE TESTIMONIOS
-
-La Comunidad Laboral Liceista ofrece las mayores oportunidades para sus miembros. Al existir un espacio común de valores y camaradería, el incentivo apoyo mutuo entre los participantes es mucho mayor. En un mundo donde la digitalización trae como desafío la confianza entre las partes, esta gran red que une a las tres FFAA de la nación facilita la colobaracion, el intercambio y  los acuerdos entre los diferentes liceistas de todo el país, bajo un mismo ideal, el patriotismo.
-
-Bienvenidos a la Comunidad laboral liceista!
-Esta nueva comunidad, formada por personas que pertenecieron y pertenecen a los distintos liceos militares que se encuentran a lo largo y ancho del país, tiene como objetivo crear lazos que formen una red de contactos entre todos sus miembros. Dando la posibilidad de pedir y brindar la ayuda que se necesite para las distintas circunstancias que surgen en este mundo tan complejo como cambiante. Ponderando, siempre, la importancia que tiene el poder contar con personas que comparten entre sí valores tan importantes como el respeto y la honestidad.
-
-
 
 HOJA DE RUTA BACKEND
 
-1. Configurar a nivel general aplicación (en consola de firebase)
-2. Configurar autenticación
+1. Configurar a nivel general aplicación (en consola de firebase) !
+2. Configurar autenticación ! 
+4. Elaborar firestore data base !
+5. Configurar permisos de base de datos !
+7. Poner la parte de información como un text área !
+9. Terminar página de administración 
+10. Añadir flyers en página de inicio !
+11. Arreglar tema de restablecimineto de constraseña !
+17. Añadir reptir contraseña en register !
+
 3. Terminar mensajes de cambio de confirmación, cambio de constraseña, etc
-4. Elaborar firestore data base
-5. Configurar permisos de base de datos
-7. Poner la parte de información como un text área
 8. Resolver tema de las fotos de perfil (usar storage, basarse en video de fazt y poner ventana modal para subir foto en caso de cambio)
-9. Terminar página de administración
-10. Añadir flyers en página de inicio
-11. Arreglar tema de restablecimineto de constraseña
 12. Añadir banner de patrocinadores
-13. Adecuar formulario para docentes o personal militar/civil
+13. Adecuar formulario para docentes o personal militar/civil 
 13. Implementar google analytics
 14. Completar responsive del sitio
 15. Añadir etiquetas SEO
 16. Hacer OPG de la página
-17. Añadir rubros restantes

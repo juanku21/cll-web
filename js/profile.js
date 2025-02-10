@@ -16,15 +16,15 @@ const pool = new userModel();
 const resetOptions = (select) => {
     select.innerHTML = ``;
     select.innerHTML = `
-    <option value="Liceo Militar General Espejo">Liceo Militar General Espejo</option>
-    <option value="Liceo Militar General Lamadrid">Liceo Militar General Lamadrid</option>
-    <option value="Liceo Militar General San Martin">Liceo Militar General San Martín</option>
-    <option value="Liceo Militar General Belgrano">Liceo Militar General Belgrano</option>
-    <option value="Liceo Militar General Paz">Liceo Militar General Paz</option>
-    <option value="Liceo Militar General Roca">Liceo Militar General Roca</option>
-    <option value="Liceo Militar Naval Almirante Storni">Liceo Militar Naval Almirante Storni</option>
-    <option value="Liceo Militar Naval Almirante Brown">Liceo Militar Naval Almirante Brown</option>
-    <option value="Liceo Aeronáutico Militar">Liceo Aeronáutico Militar</option>
+        <option value="LM General Espejo">Liceo Militar General Espejo</option>
+        <option value="LM General Lamadrid">Liceo Militar General Lamadrid</option>
+        <option value="LM General San Martin">Liceo Militar General San Martín</option>
+        <option value="LM General Belgrano">Liceo Militar General Belgrano</option>
+        <option value="LM General Paz">Liceo Militar General Paz</option>
+        <option value="LM General Roca">Liceo Militar General Roca</option>
+        <option value="LM Naval Almirante Storni">Liceo Militar Naval Almirante Storni</option>
+        <option value="LM Naval Almirante Brown">Liceo Militar Naval Almirante Brown</option>
+        <option value="Liceo Aeronáutico Militar">Liceo Aeronáutico Militar</option>
     `;
 }
 
@@ -77,12 +77,10 @@ addEventListener("DOMContentLoaded", async (e) => {
     
         profileData = profileData.data();
         
-        console.log(profileData);
-        
         // rellenamos el formulario de edición con la información preexistente
 
         let profileIMG = document.getElementById("profileIMG");
-        profileIMG.setAttribute("src", profileData["photoURL"]);
+        profileData["photoURL"] != null ? profileIMG.setAttribute("src", profileData["photoURL"]) : profileIMG.setAttribute("src", "../assets/logo-usuario.png");
 
         const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
 

@@ -13,7 +13,8 @@ import {
     onAuthStateChanged, 
     GoogleAuthProvider,
     signInWithPopup,
-    deleteUser} 
+    sendEmailVerification,
+    sendPasswordResetEmail} 
 from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 
@@ -35,4 +36,5 @@ export {
     GoogleAuthProvider,
     signInWithPopup,
     signOut,
-    deleteUser };
+    sendEmailVerification,
+    sendPasswordResetEmail};

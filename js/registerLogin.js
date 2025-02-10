@@ -3,10 +3,12 @@
 
 import { showMessage } from "./showMessage.js";
 import { auth } from "../app/firebase.js";
-import { createUserWithEmailAndPassword } from "../app/auth.js";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "../app/auth.js";
 
 
 const btnLogin = document.getElementById("btnLogin");
+
+console.log(sendEmailVerification);
 
 btnLogin.addEventListener("click", async (e) => {
 
@@ -14,32 +16,40 @@ btnLogin.addEventListener("click", async (e) => {
 
     const form = document.getElementById("formLogin");
 
-    const email = document.getElementById("emailInp").value;
-    const password = document.getElementById("passwordInp").value;
+    if (form.elements[1].value == form.elements[2].value) {
 
-    try{
-        const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
-        location.href = "./profile.html";
-        showMessage("Welcome " + userCredentials.user.email, "success");
-        // setTimeout(() => {
-        //     location.href = "./profile.html";
-        // }, 1000)
+        try{
+            const userCredentials = await createUserWithEmailAndPassword(auth, form.elements[0].value, form.elements[1].value);
+
+            try {
+                await sendEmailVerification(userCredentials.user);
+            } 
+            catch (err) {
+                console.log("Error al enviar email de verificación");
+            }
+
+            location.href = "./profile.html";
+            showMessage("Welcome " + userCredentials.user.email, "success");
+        }
+        catch(err){
+    
+            if (err.code === "auth/weak-password") {
+                showMessage("Contraseña débil", "error");
+            }
+            else if (err.code === "auth/invalid-email") {
+                showMessage("Correo no válido", "error");
+            }
+            else if (err.code === "auth/email-alredy-in-use") {
+                showMessage("Correo ya en uso", "error");
+            }
+            else{
+                showMessage(err.message, "error");
+            }
+    
+        }
     }
-    catch(err){
-
-        if (err.code === "auth/weak-password") {
-            showMessage("Contraseña débil", "error");
-        }
-        else if (err.code === "auth/invalid-email") {
-            showMessage("Correo no válido", "error");
-        }
-        else if (err.code === "auth/email-alredy-in-use") {
-            showMessage("Correo ya en uso", "error");
-        }
-        else{
-            showMessage(err.message, "error");
-        }
-
+    else{
+        showMessage("Las contraseñas deben coincidir", "error");
     }
 
     form.reset();

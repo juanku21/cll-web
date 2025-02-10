@@ -83,8 +83,6 @@ onAuthStateChanged(auth, async (user) =>{
 
         const userData = await pool.getUserWithID(user.uid);
 
-        console.log(user.photoURL);
-
         if (userData) {
             
             if (userData.data()["aceptado"] == true && userData.data()["role"] == "admin") {
@@ -93,17 +91,33 @@ onAuthStateChanged(auth, async (user) =>{
             else if (userData.data()["aceptado"] == true) {
                 signInOptionsFull();
             }
+            else if(userData.data()["aceptado"] == false){
+                signInOptionsBasic();
+            }
 
         }
         else{
             signInOptionsBasic();
 
-            const newUser = {
-                userID: user.uid,
-                aceptado: false,
-                role: "user",
-                email: user.email,
-                photoURL: user.photoURL
+            let newUser;
+
+            if (user.providerData[0].providerId == "google.com") {
+                newUser = {
+                    userID: user.uid,
+                    aceptado: false,
+                    role: "user",
+                    nombre: user.displayName,
+                    email: user.email,
+                    photoURL: user.photoURL
+                }
+            }
+            else{
+                newUser = {
+                    userID: user.uid,
+                    aceptado: false,
+                    role: "user",
+                    email: user.email,
+                }
             }
 
             const nuevo = await pool.addUser(newUser);
