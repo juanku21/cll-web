@@ -547,7 +547,7 @@ main {
 }
 .cont-edit-profile p {
   color: rgb(0, 0, 140);
-  font-size: 16px;
+  font-size: 14px;
 }
 .cont-edit-profile p:hover {
   cursor: pointer;
@@ -559,6 +559,9 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  width: 100%;
 }
 #avisoCont p {
   width: 80%;
@@ -568,8 +571,6 @@ main {
   background-color: #F2972B;
   padding: 2% 4%;
   text-align: center;
-  margin-bottom: 5%;
-  margin-top: 3%;
 }
 
 .logout-cont {
@@ -605,7 +606,7 @@ main {
   margin-top: 8%;
   margin-bottom: 6%;
 }
-.title-form-cont p {
+.title-form-cont h1 {
   font-size: 22px;
 }
 
@@ -709,10 +710,12 @@ main {
 }
 .cont-change-pass div {
   width: 100%;
+  margin-bottom: 5%;
 }
 .cont-change-pass p {
   text-align: center;
   margin-bottom: 4%;
+  font-size: 14px;
 }
 .cont-change-pass button {
   width: 100%;
@@ -752,7 +755,7 @@ main {
 .btn-login-cont p a {
   color: blue;
 }
-.btn-login-cont p:hover {
+.btn-login-cont p a:hover {
   cursor: pointer;
   color: #9cccd4;
 }
@@ -901,7 +904,9 @@ textarea:disabled {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  margin-bottom: 5%;
 }
 .check-cont-profile input {
   width: 20px;
@@ -912,7 +917,6 @@ textarea:disabled {
   text-align: center;
   color: black;
   font-size: 14px;
-  margin-bottom: 5%;
 }
 
 .admin-section {
@@ -1094,6 +1098,153 @@ textarea:disabled {
     height: 400px;
     margin-bottom: 6%;
   }
+  .title-form-cont {
+    margin-top: 8%;
+    margin-bottom: 5%;
+  }
+  .title-form-cont p {
+    font-size: 24px;
+  }
+  .form-section {
+    width: 80%;
+    border-radius: 10px;
+  }
+  .form-section form {
+    width: 100%;
+  }
+  .input-cont {
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+  }
+  .input-cont input {
+    width: 100%;
+    height: 38px;
+    border-width: 0.8px;
+    margin-top: 1%;
+    padding: 4%;
+  }
+  .input-cont input::placeholder {
+    font-size: 14px;
+  }
+  .cont-change-pass {
+    margin-top: 5%;
+    margin-bottom: 8%;
+    width: 80%;
+  }
+  .cont-change-pass div {
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  .cont-change-pass p {
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 16px;
+  }
+  .cont-change-pass button {
+    height: 38px;
+    border-radius: 8px;
+  }
+  .btn-login-cont {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 12%;
+  }
+  .btn-login-cont button {
+    width: 100%;
+    height: 38px;
+    border-radius: 8px;
+    margin-bottom: 4%;
+    gap: 6%;
+  }
+  .btn-login-cont button svg {
+    width: 26px;
+    height: 26px;
+  }
+  .btn-login-cont h1 {
+    margin-top: 10%;
+    font-size: 16px;
+  }
+  .profile-avatar {
+    width: 80%;
+  }
+  .cont-profile-img {
+    width: 140px;
+    height: 140px;
+  }
+  .cont-edit-profile {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .cont-edit-profile p {
+    font-size: 14px;
+  }
+  .logout-cont {
+    margin-top: 4%;
+    margin-bottom: 10%;
+    width: 45%;
+  }
+  .logout-cont button {
+    width: 100%;
+    height: 38px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  #avisoCont {
+    margin-bottom: 5%;
+    margin-top: 3%;
+  }
+  #avisoCont p {
+    width: 60%;
+    font-size: 12px;
+    height: 60px;
+    padding: 2% 4%;
+  }
+  .text-area-cont {
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+  }
+  .text-area-cont textarea {
+    width: 100%;
+    height: 200px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    margin-top: 1%;
+    padding: 4%;
+  }
+  .text-area-cont textarea::placeholder {
+    font-size: 14px;
+  }
+  .select-cont {
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+  }
+  .select-cont select {
+    width: 100%;
+    height: 40px;
+    border-width: 0.8px;
+    border-color: rgb(94, 94, 94);
+    border-radius: 8px;
+    padding: 4%;
+    font-size: 14px;
+  }
+  .select-cont select option {
+    color: black;
+  }
+  .check-cont-profile {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .check-cont-profile input {
+    width: 20px;
+    height: 20px;
+    margin-right: 3%;
+  }
+  .check-cont-profile p {
+    font-size: 14px;
+  }
 }
 @media (min-width: 768px) {
   header {
@@ -1124,6 +1275,7 @@ textarea:disabled {
   }
   .about-section div {
     flex-direction: row;
+    align-items: flex-start;
   }
   .about-section div div {
     margin-bottom: 3%;
@@ -1236,6 +1388,164 @@ textarea:disabled {
   footer {
     margin-top: 0.7%;
     width: 98%;
+  }
+  .title-form-cont {
+    margin-top: 8%;
+    margin-bottom: 5%;
+  }
+  .title-form-cont h1 {
+    font-size: 26px;
+  }
+  .form-section {
+    width: 75%;
+    border-radius: 10px;
+  }
+  .form-section form {
+    width: 100%;
+  }
+  .input-cont {
+    width: 80%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+  }
+  .input-cont input {
+    width: 100%;
+    height: 40px;
+    border-width: 0.8px;
+    margin-top: 1%;
+    padding: 2.5% 3%;
+  }
+  .input-cont input::placeholder {
+    font-size: 14px;
+  }
+  .reset-password-cont {
+    width: 100%;
+    margin-top: 4%;
+  }
+  .reset-password-cont p {
+    font-size: 16px;
+  }
+  .cont-change-pass {
+    margin-top: 5%;
+    margin-bottom: 8%;
+    width: 80%;
+  }
+  .cont-change-pass div {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+  .cont-change-pass p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 3%;
+  }
+  .cont-change-pass button {
+    height: 40px;
+    border-radius: 8px;
+  }
+  .btn-login-cont {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 12%;
+  }
+  .btn-login-cont button {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 3%;
+    gap: 3%;
+  }
+  .btn-login-cont button svg {
+    width: 26px;
+    height: 26px;
+  }
+  .btn-login-cont p {
+    margin-top: 10%;
+    font-size: 18px;
+  }
+  .profile-avatar {
+    width: 80%;
+    margin-top: 2%;
+  }
+  .cont-profile-img {
+    width: 150px;
+    height: 150px;
+  }
+  .cont-edit-profile {
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+  .cont-edit-profile p {
+    font-size: 16px;
+  }
+  .logout-cont {
+    margin-top: 3.5%;
+    margin-bottom: 5%;
+    width: 30%;
+  }
+  .logout-cont button {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  #avisoCont {
+    margin-bottom: 4%;
+    margin-top: 3%;
+  }
+  #avisoCont p {
+    width: 50%;
+    font-size: 15px;
+    height: 70px;
+    padding: 2% 4%;
+  }
+  .text-area-cont {
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 3.5%;
+  }
+  .text-area-cont textarea {
+    width: 100%;
+    height: 200px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    margin-top: 1%;
+    padding: 2.8%;
+  }
+  .text-area-cont textarea::placeholder {
+    font-size: 14px;
+  }
+  .select-cont {
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+  }
+  .select-cont select {
+    width: 100%;
+    height: 40px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    padding: 2%;
+    font-size: 16px;
+    margin-top: 1%;
+  }
+  .select-cont select option {
+    color: black;
+  }
+  .select-cont select::placeholder {
+    color: black;
+  }
+  .check-cont-profile {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .check-cont-profile input {
+    width: 22px;
+    height: 22px;
+    margin-right: 2.5%;
+  }
+  .check-cont-profile p {
+    font-size: 16px;
   }
 }
 @media (min-width: 1024px) {
@@ -1400,6 +1710,164 @@ textarea:disabled {
   footer {
     margin-top: 0.6%;
     width: 99%;
+  }
+  .title-form-cont {
+    margin-top: 8%;
+    margin-bottom: 5%;
+  }
+  .title-form-cont h1 {
+    font-size: 30px;
+  }
+  .form-section {
+    width: 70%;
+    min-height: 95vh;
+    border-radius: 10px;
+    justify-content: flex-start;
+  }
+  .form-section form {
+    width: 100%;
+  }
+  .input-cont {
+    width: 80%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .input-cont input {
+    width: 100%;
+    height: 40px;
+    border-width: 0.8px;
+    margin-top: 1%;
+    padding: 2.5% 2%;
+  }
+  .input-cont input::placeholder {
+    font-size: 16px;
+  }
+  .reset-password-cont {
+    width: 100%;
+    margin-top: 4%;
+  }
+  .reset-password-cont p {
+    font-size: 18px;
+  }
+  .cont-change-pass {
+    margin-top: 5%;
+    margin-bottom: 8%;
+    width: 80%;
+  }
+  .cont-change-pass div {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+  .cont-change-pass p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 3%;
+  }
+  .cont-change-pass button {
+    height: 46px;
+    border-radius: 8px;
+  }
+  .btn-login-cont {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 12%;
+  }
+  .btn-login-cont button {
+    width: 100%;
+    height: 46px;
+    border-radius: 8px;
+    margin-bottom: 3%;
+    gap: 3%;
+  }
+  .btn-login-cont button svg {
+    width: 26px;
+    height: 26px;
+  }
+  .btn-login-cont p {
+    margin-top: 10%;
+    font-size: 20px;
+  }
+  .profile-avatar {
+    width: 80%;
+    margin-top: 1%;
+  }
+  .cont-profile-img {
+    width: 160px;
+    height: 160px;
+  }
+  .cont-edit-profile {
+    margin-top: 4%;
+    margin-bottom: 2%;
+  }
+  .cont-edit-profile p {
+    font-size: 18px;
+  }
+  .logout-cont {
+    margin-top: 3%;
+    margin-bottom: 4%;
+    width: 26%;
+  }
+  .logout-cont button {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  #avisoCont {
+    margin-bottom: 3.5%;
+    margin-top: 3%;
+    width: 100%;
+  }
+  #avisoCont p {
+    width: 45%;
+    font-size: 18px;
+    height: 90px;
+    padding: 2% 4%;
+  }
+  .text-area-cont {
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 2.5%;
+  }
+  .text-area-cont textarea {
+    width: 100%;
+    height: 200px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    margin-top: 1%;
+    padding: 2.8%;
+  }
+  .text-area-cont textarea::placeholder {
+    font-size: 14px;
+  }
+  .select-cont {
+    width: 80%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+  }
+  .select-cont select {
+    width: 100%;
+    height: 40px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    padding: 1% 2%;
+    font-size: 16px;
+    margin-top: 1%;
+  }
+  .select-cont select option {
+    color: black;
+  }
+  .check-cont-profile {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .check-cont-profile input {
+    width: 24px;
+    height: 24px;
+    margin-right: 2.5%;
+  }
+  .check-cont-profile p {
+    font-size: 18px;
   }
   .title-admin-section {
     display: flex;
@@ -1594,6 +2062,166 @@ textarea:disabled {
     margin-top: 0.4%;
     width: 99%;
   }
+  .title-form-cont {
+    margin-top: 8%;
+    margin-bottom: 5%;
+  }
+  .title-form-cont h1 {
+    font-size: 32px;
+  }
+  .form-section {
+    width: 70%;
+    min-height: 95vh;
+    border-radius: 10px;
+    justify-content: flex-start;
+  }
+  .form-section form {
+    width: 100%;
+  }
+  .input-cont {
+    width: 80%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .input-cont input {
+    width: 100%;
+    height: 45px;
+    border-width: 0.8px;
+    margin-top: 1%;
+    padding: 1.5% 2%;
+  }
+  .input-cont input::placeholder {
+    font-size: 16px;
+  }
+  .reset-password-cont {
+    width: 100%;
+    margin-top: 4%;
+  }
+  .reset-password-cont p {
+    font-size: 18px;
+  }
+  .cont-change-pass {
+    margin-top: 5%;
+    margin-bottom: 6%;
+    width: 80%;
+  }
+  .cont-change-pass div {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+  .cont-change-pass p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 3%;
+  }
+  .cont-change-pass button {
+    height: 48px;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+  .btn-login-cont {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 12%;
+  }
+  .btn-login-cont button {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    margin-bottom: 3%;
+    font-size: 18px;
+    gap: 2%;
+  }
+  .btn-login-cont button svg {
+    width: 26px;
+    height: 26px;
+  }
+  .btn-login-cont p {
+    margin-top: 8%;
+    font-size: 20px;
+  }
+  .profile-avatar {
+    width: 80%;
+    margin-top: 0.5%;
+  }
+  .cont-profile-img {
+    width: 160px;
+    height: 160px;
+  }
+  .cont-edit-profile {
+    margin-top: 4%;
+    margin-bottom: 2%;
+  }
+  .cont-edit-profile p {
+    font-size: 20px;
+  }
+  .logout-cont {
+    margin-top: 3%;
+    margin-bottom: 4%;
+    width: 22%;
+  }
+  .logout-cont button {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+  #avisoCont {
+    margin-bottom: 3%;
+    margin-top: 3%;
+    width: 100%;
+  }
+  #avisoCont p {
+    width: 40%;
+    font-size: 18px;
+    height: 92px;
+    padding: 2% 4%;
+  }
+  .text-area-cont {
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .text-area-cont textarea {
+    width: 100%;
+    height: 200px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    margin-top: 1%;
+    padding: 2%;
+  }
+  .text-area-cont textarea::placeholder {
+    font-size: 16px;
+  }
+  .select-cont {
+    width: 80%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+  }
+  .select-cont select {
+    width: 100%;
+    height: 45px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    padding: 1% 2%;
+    font-size: 16px;
+    margin-top: 1%;
+  }
+  .select-cont select option {
+    color: black;
+  }
+  .check-cont-profile {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .check-cont-profile input {
+    width: 24px;
+    height: 24px;
+    margin-right: 2.5%;
+  }
+  .check-cont-profile p {
+    font-size: 18px;
+  }
 }
 @media (min-width: 1440px) {
   header {
@@ -1763,6 +2391,167 @@ textarea:disabled {
   footer {
     margin-top: 0.2%;
     width: 99%;
+  }
+  .title-form-cont {
+    margin-top: 8%;
+    margin-bottom: 5%;
+  }
+  .title-form-cont h1 {
+    font-size: 36px;
+  }
+  .form-section {
+    width: 65%;
+    min-height: 95vh;
+    border-radius: 10px;
+    justify-content: flex-start;
+  }
+  .form-section form {
+    width: 100%;
+  }
+  .input-cont {
+    width: 80%;
+    margin-top: 0.8%;
+    margin-bottom: 0.8%;
+  }
+  .input-cont input {
+    width: 100%;
+    height: 45px;
+    border-width: 0.8px;
+    margin-top: 1%;
+    padding: 1% 2%;
+  }
+  .input-cont input::placeholder {
+    font-size: 18px;
+  }
+  .reset-password-cont {
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+  }
+  .reset-password-cont p {
+    font-size: 20px;
+  }
+  .cont-change-pass {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    width: 80%;
+  }
+  .cont-change-pass div {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+  .cont-change-pass p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 3%;
+  }
+  .cont-change-pass button {
+    height: 48px;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+  .btn-login-cont {
+    width: 80%;
+    margin-top: 3%;
+    margin-bottom: 5%;
+  }
+  .btn-login-cont button {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    margin-bottom: 2%;
+    font-size: 20px;
+    gap: 2%;
+  }
+  .btn-login-cont button svg {
+    width: 26px;
+    height: 26px;
+  }
+  .btn-login-cont p {
+    margin-top: 8%;
+    font-size: 22px;
+  }
+  .profile-avatar {
+    width: 80%;
+    margin-top: 0.5%;
+  }
+  .cont-profile-img {
+    width: 170px;
+    height: 170px;
+  }
+  .cont-edit-profile {
+    margin-top: 4%;
+    margin-bottom: 2%;
+  }
+  .cont-edit-profile p {
+    font-size: 22px;
+  }
+  .logout-cont {
+    margin-top: 3%;
+    margin-bottom: 4%;
+    width: 22%;
+  }
+  .logout-cont button {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 8px;
+  }
+  #avisoCont {
+    margin-bottom: 2%;
+    margin-top: 3%;
+    width: 100%;
+  }
+  #avisoCont p {
+    width: 38%;
+    font-size: 18px;
+    height: 94px;
+    padding: 2% 4%;
+  }
+  .text-area-cont {
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .text-area-cont textarea {
+    width: 100%;
+    height: 200px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    margin-top: 1%;
+    padding: 2%;
+  }
+  .text-area-cont textarea::placeholder {
+    font-size: 14px;
+  }
+  .select-cont {
+    width: 80%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .select-cont select {
+    width: 100%;
+    height: 45px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    padding: 1% 2%;
+    font-size: 16px;
+    margin-top: 1%;
+  }
+  .select-cont select option {
+    color: black;
+  }
+  .check-cont-profile {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .check-cont-profile input {
+    width: 24px;
+    height: 24px;
+    margin-right: 2.5%;
+  }
+  .check-cont-profile p {
+    font-size: 20px;
   }
 }
 

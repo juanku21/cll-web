@@ -11,8 +11,10 @@ HOJA DE RUTA BACKEND
 10. Añadir flyers en página de inicio !
 11. Arreglar tema de restablecimineto de constraseña !
 17. Añadir reptir contraseña en register !
+3. Terminar mensajes de cambio de confirmación, cambio de constraseña, etc !
+17. flex start en parte de misión y visión, revisar !
 
-3. Terminar mensajes de cambio de confirmación, cambio de constraseña, etc
+
 8. Resolver tema de las fotos de perfil (usar storage, basarse en video de fazt y poner ventana modal para subir foto en caso de cambio)
 12. Añadir banner de patrocinadores
 13. Adecuar formulario para docentes o personal militar/civil 

@@ -92,7 +92,7 @@ addEventListener("DOMContentLoaded", async (e) => {
             }
             else{
                 element.value = "";
-                avisoCont.innerHTML = `<p>Debe completar el formulario con los datos para poder usar el sitio</p>`;
+                avisoCont.innerHTML = `<p>Debe completar el formulario con sus datos para poder usar el sitio</p>`;
             }
 
         }
