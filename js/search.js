@@ -197,7 +197,7 @@ addEventListener("DOMContentLoaded", async () => {
 
     // petición al servidor para obtener todos los usuarios
     
-    const usersData = await pool.getUsers();
+    const usersData = await pool.getUsersAccepted();
 
     // logica de búsqueda
 

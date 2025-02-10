@@ -762,6 +762,8 @@ main {
 
 .search-section {
   width: 85%;
+  margin-bottom: 8%;
+  margin-top: 2%;
 }
 
 .filters-cont {
@@ -789,12 +791,6 @@ main {
   height: 20px;
   margin-right: 3%;
 }
-.check-cont p {
-  text-align: center;
-  color: black;
-  font-size: 14px;
-  margin-bottom: 5%;
-}
 
 .filters-off {
   display: none;
@@ -818,7 +814,7 @@ main {
 .select-cont-search {
   width: 80%;
   margin-top: 2%;
-  margin-bottom: 4%;
+  margin-bottom: 3%;
 }
 .select-cont-search select {
   width: 100%;
@@ -826,7 +822,7 @@ main {
   border-width: 0.8px;
   border-color: rgb(94, 94, 94);
   border-radius: 8px;
-  padding: 4%;
+  padding: 2% 4%;
   font-size: 14px;
 }
 .select-cont-search select option {
@@ -836,6 +832,10 @@ main {
 .results-section {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .profile-card {
@@ -845,6 +845,7 @@ main {
   background-color: white;
   border-radius: 18px;
   margin-bottom: 8%;
+  box-shadow: 0px 0px 12px 2px #242127;
 }
 
 .img-profile-card {
@@ -882,7 +883,7 @@ main {
   padding-right: 6%;
 }
 .content-profile-card div div:last-child p {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 input:disabled {
@@ -1547,6 +1548,110 @@ textarea:disabled {
   .check-cont-profile p {
     font-size: 16px;
   }
+  .search-section {
+    width: 85%;
+    margin-bottom: 5%;
+  }
+  .filters-cont {
+    width: 100%;
+  }
+  .filters-cont p {
+    font-size: 15px;
+    margin-bottom: 4%;
+  }
+  .check-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 12%;
+  }
+  .check-cont input {
+    width: 22px;
+    height: 22px;
+    margin-right: 2%;
+  }
+  .filters-off {
+    display: none;
+  }
+  .filters-on {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .category-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .select-cont-search {
+    width: 60%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+  }
+  .select-cont-search select {
+    width: 100%;
+    height: 40px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    padding: 2%;
+    font-size: 14px;
+  }
+  .results-section {
+    width: 100%;
+    min-height: 100vh;
+  }
+  .profile-card {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 18px;
+    margin-bottom: 5%;
+  }
+  .img-profile-card {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-profile-card div {
+    width: 130px;
+    height: 130px;
+  }
+  .img-profile-card div img {
+    width: 100%;
+    height: 100%;
+  }
+  .content-profile-card {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content-profile-card div {
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+  .content-profile-card div div:first-child {
+    margin-bottom: 4%;
+  }
+  .content-profile-card div div:first-child p {
+    font-size: 20px;
+  }
+  .content-profile-card div div:last-child {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .content-profile-card div div:last-child p {
+    font-size: 14px;
+  }
 }
 @media (min-width: 1024px) {
   header {
@@ -1603,6 +1708,7 @@ textarea:disabled {
   }
   .slider {
     height: 600px;
+    width: 80%;
   }
   .indicador {
     width: 12px;
@@ -1887,6 +1993,111 @@ textarea:disabled {
   }
   .advertencia-vista {
     display: none;
+  }
+  .search-section {
+    width: 85%;
+    margin-bottom: 3%;
+  }
+  .filters-cont {
+    width: 100%;
+  }
+  .filters-cont p {
+    font-size: 15px;
+    margin-bottom: 2%;
+  }
+  .check-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 10%;
+  }
+  .check-cont input {
+    width: 22px;
+    height: 22px;
+    margin-right: 1%;
+  }
+  .filters-off {
+    display: none;
+  }
+  .filters-on {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .category-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .select-cont-search {
+    width: 50%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .select-cont-search select {
+    width: 100%;
+    height: 40px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    padding: 2%;
+    font-size: 14px;
+  }
+  .results-section {
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 4%;
+  }
+  .profile-card {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 18px;
+    margin-bottom: 4%;
+  }
+  .img-profile-card {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-profile-card div {
+    width: 150px;
+    height: 150px;
+  }
+  .img-profile-card div img {
+    width: 100%;
+    height: 100%;
+  }
+  .content-profile-card {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content-profile-card div {
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+  .content-profile-card div div:first-child {
+    margin-bottom: 4%;
+  }
+  .content-profile-card div div:first-child p {
+    font-size: 20px;
+  }
+  .content-profile-card div div:last-child {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .content-profile-card div div:last-child p {
+    font-size: 15px;
   }
 }
 @media (min-width: 1230px) {
@@ -2222,6 +2433,112 @@ textarea:disabled {
   .check-cont-profile p {
     font-size: 18px;
   }
+  .search-section {
+    width: 85%;
+    margin-bottom: 3%;
+  }
+  .filters-cont {
+    width: 100%;
+  }
+  .filters-cont p {
+    font-size: 16px;
+    margin-bottom: 2%;
+    margin-top: 1%;
+  }
+  .check-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 8%;
+  }
+  .check-cont input {
+    width: 22px;
+    height: 22px;
+    margin-right: 1%;
+  }
+  .filters-off {
+    display: none;
+  }
+  .filters-on {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .category-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .select-cont-search {
+    width: 50%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .select-cont-search select {
+    width: 100%;
+    height: 40px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    padding: 1% 2%;
+    font-size: 14px;
+  }
+  .results-section {
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 4%;
+  }
+  .profile-card {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 18px;
+    margin-bottom: 4%;
+  }
+  .img-profile-card {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-profile-card div {
+    width: 150px;
+    height: 150px;
+  }
+  .img-profile-card div img {
+    width: 100%;
+    height: 100%;
+  }
+  .content-profile-card {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content-profile-card div {
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+  .content-profile-card div div:first-child {
+    margin-bottom: 4%;
+  }
+  .content-profile-card div div:first-child p {
+    font-size: 20px;
+  }
+  .content-profile-card div div:last-child {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .content-profile-card div div:last-child p {
+    font-size: 15px;
+  }
 }
 @media (min-width: 1440px) {
   header {
@@ -2552,6 +2869,111 @@ textarea:disabled {
   }
   .check-cont-profile p {
     font-size: 20px;
+  }
+  .search-section {
+    width: 85%;
+    margin-bottom: 3%;
+  }
+  .filters-cont {
+    width: 100%;
+  }
+  .filters-cont p {
+    font-size: 18px;
+    margin-bottom: 2%;
+  }
+  .check-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 5%;
+  }
+  .check-cont input {
+    width: 22px;
+    height: 22px;
+    margin-right: 1%;
+  }
+  .filters-off {
+    display: none;
+  }
+  .filters-on {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .category-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .select-cont-search {
+    width: 50%;
+    margin-top: 0.8%;
+    margin-bottom: 0.8%;
+  }
+  .select-cont-search select {
+    width: 100%;
+    height: 45px;
+    border-width: 0.8px;
+    border-radius: 8px;
+    padding: 1% 2%;
+    font-size: 14px;
+  }
+  .results-section {
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 4%;
+  }
+  .profile-card {
+    width: 64%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 18px;
+    margin-bottom: 4%;
+  }
+  .img-profile-card {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-profile-card div {
+    width: 160px;
+    height: 160px;
+  }
+  .img-profile-card div img {
+    width: 100%;
+    height: 100%;
+  }
+  .content-profile-card {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content-profile-card div {
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+  .content-profile-card div div:first-child {
+    margin-bottom: 4%;
+  }
+  .content-profile-card div div:first-child p {
+    font-size: 20px;
+  }
+  .content-profile-card div div:last-child {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .content-profile-card div div:last-child p {
+    font-size: 15px;
   }
 }
 

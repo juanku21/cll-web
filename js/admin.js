@@ -26,14 +26,14 @@ addEventListener("DOMContentLoaded", async () => {
 
         let campos = ["nombre", "email", "telefono", "liceo"];
 
-        for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
             
             let campo = document.createElement("td");
             campo.classList.add("whitespace-nowrap", "px-6", "py-4", "font-medium");
 
-            if (i != 0) {
+            if (j != 0) {
 
-                user[campos[i - 1]] === undefined ? campo.innerText = "No proporcionado" : campo.innerText = user[campos[i - 1]];
+                user[campos[j - 1]] === undefined ? campo.innerText = "No proporcionado" : campo.innerText = user[campos[j - 1]];
 
             }
             else{

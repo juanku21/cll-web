@@ -39,6 +39,30 @@ export class userModel {
     }
 
 
+    // obtener usuarios aceptados
+
+    async getUsersAccepted(){
+        try {
+            const consult = query(collection(db, "Users"), where("aceptado", "==", true));
+            const querySnapshot = await getDocs(consult);
+            let users = [];
+            
+            if (!querySnapshot) {
+                return false;
+            }
+
+            querySnapshot.docs.forEach((user) => {
+                users.push(user.data());
+            });
+
+            return users;
+        } 
+        catch (err) {
+            return err.message;
+        }
+    }
+
+
     // obtener usuarios no aceptados
 
     async getUsersNotAccepted(){
