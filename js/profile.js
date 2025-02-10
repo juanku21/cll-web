@@ -61,6 +61,22 @@ ffaaInp.addEventListener("change", (e) => {
 })
 
 
+// lógica para menajar tipos de vínculos de usuario
+
+const typeRelationship = document.getElementById("typeRelationship");
+const promotionCont = document.getElementById("promotionCont");
+
+typeRelationship.addEventListener("change", () => {
+
+    if (typeRelationship.value == "Ex-cadete") {
+        promotionCont.classList.remove("hidden");
+    }
+    else if (typeRelationship.value == "Personal Militar o Civil") {
+        promotionCont.classList.add("hidden");
+    }
+
+})
+
 
 // evento disparado al cargar la página
 
@@ -70,7 +86,6 @@ addEventListener("DOMContentLoaded", async (e) => {
 
     const avisoCont = document.querySelector("#avisoCont");
 
-    
     try {
 
         let profileData = await pool.getUserWithID(getUserID());
@@ -82,13 +97,15 @@ addEventListener("DOMContentLoaded", async (e) => {
         let profileIMG = document.getElementById("profileIMG");
         profileData["photoURL"] != null ? profileIMG.setAttribute("src", profileData["photoURL"]) : profileIMG.setAttribute("src", "../assets/logo-usuario.png");
 
-        const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
+        const keysBodyReqCarga = ["nombre", "telefono", "ffaa", "liceo", "tipo-vinculo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
 
         for (let i = 0; i < editProfileForm.elements.length - 1; i++) {
             const element = editProfileForm.elements[i];
 
-            if (profileData[keysBodyReq[i]] !== undefined) {
-                element.value = profileData[keysBodyReq[i]];
+            console.log(profileData[keysBodyReqCarga[i]], element);
+
+            if (profileData[keysBodyReqCarga[i]] !== undefined) {
+                element.value = profileData[keysBodyReqCarga[i]];
             }
             else{
                 element.value = "";
@@ -96,6 +113,8 @@ addEventListener("DOMContentLoaded", async (e) => {
             }
 
         }
+
+        typeRelationship.value == "Ex-cadete" ? promotionCont.classList.remove("hidden") : promotionCont.classList.add("hidden");
 
     } 
     catch (err) {
@@ -162,27 +181,39 @@ btnEdit.addEventListener("click", async (e) => {
 
     for (let i = 0; i < campos.length - 1; i++) {
         const element = campos[i];
-        
-        if (element.value.toString().trim() == "" && (i != 10 && i != 11)) {
-            return showMessage("Debe completar todos los datos", "error");
+
+        if (typeRelationship.value == "Ex-cadete") {
+            if (element.value.toString().trim() == "" && (i != 11 && i != 12)) {
+                return showMessage("Debe completar todos los datos", "error");
+            }
+        }
+        else if (typeRelationship.value == "Personal Militar o Civil") {
+            if (element.value.toString().trim() == "" && (i != 11 && i != 12 && i != 5)) {
+                return showMessage("Debe completar todos los datos", "error");
+            }
         }
         
     }
 
     let datosForm = {}
 
-    const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
+    const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "tipo-vinculo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
 
-    for (let i = 0; i < keysBodyReq.length; i++) {
-        const key = keysBodyReq[i];
 
-        if (campos[i].value.toString().trim() == "") {
-            if (i == 10 || i == 11) {
-                datosForm[key] = campos[i].value;
+    for (let j = 0; j < keysBodyReq.length; j++) {
+        const key = keysBodyReq[j];
+
+        if (typeRelationship.value == "Personal Militar o Civil" && j == 5) {
+            continue;
+        }
+
+        if (campos[j].value.toString().trim() == "") {
+            if (j == 10 || j == 11) {
+                datosForm[key] = campos[j].value;
             }
         }
         else{
-            datosForm[key] = campos[i].value;
+            datosForm[key] = campos[j].value;
         }
 
     }

@@ -13,12 +13,12 @@ HOJA DE RUTA BACKEND
 17. Añadir reptir contraseña en register !
 3. Terminar mensajes de cambio de confirmación, cambio de constraseña, etc !
 17. flex start en parte de misión y visión, revisar !
+13. Adecuar formulario para docentes o personal militar/civil 
+14. Completar responsive del sitio
 
 
 8. Resolver tema de las fotos de perfil (usar storage, basarse en video de fazt y poner ventana modal para subir foto en caso de cambio)
 12. Añadir banner de patrocinadores
-13. Adecuar formulario para docentes o personal militar/civil 
 13. Implementar google analytics
-14. Completar responsive del sitio
 15. Añadir etiquetas SEO
 16. Hacer OPG de la página
