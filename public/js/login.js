@@ -1,26 +1,5 @@
 
 
-// const reqLogin = async (email, pass) => {
-//     const res = await fetch("../usuarios/login", {
-//         method: 'POST',
-//         headers: {'Content-Type': 'application/json'},
-//         body: JSON.stringify(
-//             {
-//                 email: `${email}`,
-//                 password: `${pass}`
-//             }
-//         )
-//     })
-    
-//     return {
-//         status: res.status,
-//         statusText: res.statusText,
-//         ok: res.ok,
-//         content: await res.json()
-//     };
-// }
-
-
 import { showMessage } from "./showMessage.js";
 import { auth } from "../app/firebase.js";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "../app/auth.js";
