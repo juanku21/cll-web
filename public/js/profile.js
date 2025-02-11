@@ -208,8 +208,8 @@ btnEdit.addEventListener("click", async (e) => {
         }
 
         if (campos[j].value.toString().trim() == "") {
-            if (j == 10 || j == 11) {
-                datosForm[key] = campos[j].value;
+            if (j == 11 || j == 12) {
+                datosForm[key] = "";
             }
         }
         else{
