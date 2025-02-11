@@ -933,6 +933,10 @@ textarea:disabled {
   display: none;
 }
 
+.text-black {
+  color: #141414 !important;
+}
+
 .advertencia-vista {
   display: flex;
   flex-direction: column;

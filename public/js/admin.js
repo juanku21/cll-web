@@ -29,7 +29,7 @@ addEventListener("DOMContentLoaded", async () => {
         for (let j = 0; j < 5; j++) {
             
             let campo = document.createElement("td");
-            campo.classList.add("whitespace-nowrap", "px-6", "py-4", "font-medium");
+            campo.classList.add("whitespace-nowrap", "px-6", "py-4", "font-medium", "text-black");
 
             if (j != 0) {
 
