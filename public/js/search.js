@@ -162,47 +162,49 @@ addEventListener("DOMContentLoaded", async () => {
     
     const usersData = await pool.getUsersAccepted();
 
+    const resultsSearch = document.querySelector("#resultsSearch");
 
-    // logica de búsqueda
+    const searchButton = document.querySelector("#searchButton");
 
-    searchInp.addEventListener("input", (e) => {
-        const dato = searchInp.value;
 
-        const resultsSearch = document.querySelector("#resultsSearch");
+    searchButton.addEventListener("click", (e) => {
+        
         resultsSearch.innerHTML = ``;
 
+        const dato = searchInp.value;
+
+        let results;
+
         if (dato.length != 0) {
+            results = searchInfo(usersData, dato);
+        }
 
-            let results = searchInfo(usersData, dato);
+        results = usersData;
 
-            const selects = document.getElementsByTagName("select");
+        const selects = document.getElementsByTagName("select");
 
-            // activación de filtrado
+        // activación de filtrado
 
-            console.log(filter);
+        for (let i = 0; i < selects.length; i++) {
+            const select = selects[i];;
 
-            for (let i = 0; i < selects.length; i++) {
-                const select = selects[i];;
-
-                if (filter[i]) {
-                    results = filterInfo(results, {
-                        key: select.name,
-                        value: select.value
-                    });
-                }
+            if (filter[i]) {
+                results = filterInfo(results, {
+                    key: select.name,
+                    value: select.value
+                });
+            }
                 
-            }
+        }
 
-            if (results.length != 0) {
-                for (let i = 0; i < results.length; i++) {
-                    const userData = results[i];
-                    resultsSearch.innerHTML += createUserCard(userData);
-                }
+        if (results.length != 0) {
+            for (let i = 0; i < results.length; i++) {
+                const userData = results[i];
+                resultsSearch.innerHTML += createUserCard(userData);
             }
-            else{
-                resultsSearch.innerHTML += `<p>Sin resultados de búsqueda</p>`
-            }
-        
+        }
+        else{
+            resultsSearch.innerHTML += `<p>Sin resultados de búsqueda</p>`
         }
 
     })
