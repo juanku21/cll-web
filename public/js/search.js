@@ -36,7 +36,7 @@ const searchInfo = (documents, data) => {
 
             const keys = Object.keys(doc);
     
-            for(let i = 0; i < keys.length; i++){
+            for (let i = 0; i < keys.length; i++){
     
                 const clave = keys[i];
     
@@ -175,11 +175,13 @@ addEventListener("DOMContentLoaded", async () => {
 
         let results;
 
-        if (dato.length != 0) {
+        if (dato.length != 0) {;
             results = searchInfo(usersData, dato);
         }
+        else{
+            results = usersData;
+        }
 
-        results = usersData;
 
         const selects = document.getElementsByTagName("select");
 
