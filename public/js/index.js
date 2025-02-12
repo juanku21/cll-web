@@ -4,7 +4,7 @@
 
 const createFlyers = async () => {
     const flyersCont = document.querySelector(".flyers-cont");
-    let data = await fetch("./json/flyers.json");
+    let data = await fetch("../json/flyers.json");
     data = await data.json();
 
     for (const flyer of data) {
@@ -121,32 +121,31 @@ for (let i = 0; i < contIndicators.length; i++) {
 
 // código destinado a resolver el problema de la sección de testimonios
 
-addEventListener("DOMContentLoaded", (e) => {
+addEventListener("DOMContentLoaded", async (e) => {
 
     let feedback = document.getElementById("feedback").children[1];
 
-    fetch("../json/feedback.json").then(data => data.json())
-    .then(data => {
+    let data = await fetch("../json/feedback.json");
+    data = await data.json();
 
-        for (let i = 0; i < data.length; i++) {
-            const element = data[i];
+
+    for (let i = 0; i < data.length; i++) {
+        const element = data[i];
             
-            feedback.innerHTML += `
-                <div class="feedback-card"> 
+        feedback.innerHTML += `
+            <div class="feedback-card"> 
+                <div>
                     <div>
-                        <div>
-                            <img src="${element.imgRoute}" alt="${element.imgAlt}">
-                        </div>
+                        <img src="${element.imgRoute}" alt="${element.imgAlt}">
                     </div>
-                    <div>
-                        <h4>${element.name}</h4>
-                        <p>${element.prom}</p>
-                        <p>${element.info}</p>
-                    </div>
-                </div>`
-        }
-
-    })
+                </div>
+                <div>
+                    <h4>${element.name}</h4>
+                    <p>${element.prom}</p>
+                    <p>${element.info}</p>
+                </div>
+            </div>`
+    }
 
     createFlyers();
 })
