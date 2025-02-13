@@ -18,5 +18,9 @@
     {
         "img": "./assets/flyer-5.png",
         "alt": "clases-particulares-música"
+    },
+    {
+        "img": "./assets/flyer-6.png",
+        "alt": "mpi-servicios"
     }
 ]
