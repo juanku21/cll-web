@@ -1364,6 +1364,7 @@ textarea:disabled {
   }
   .slider {
     height: 400px;
+    width: 85% !important;
   }
   .indicador {
     width: 10px;
@@ -1797,7 +1798,7 @@ textarea:disabled {
   }
   .slider {
     height: 600px;
-    width: 80%;
+    width: 80% !important;
   }
   .indicador {
     width: 12px;

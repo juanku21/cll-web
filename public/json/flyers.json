@@ -22,5 +22,9 @@
     {
         "img": "./assets/flyer-6.png",
         "alt": "mpi-servicios"
+    },
+    {
+        "img": "./assets/flyer-7.jpeg",
+        "alt": "aguas-de-paso-servicios"
     }
 ]
