@@ -1044,6 +1044,10 @@ textarea:disabled {
   display: none;
 }
 
+.statistics-data {
+  display: none;
+}
+
 .text-black {
   color: #141414 !important;
 }
@@ -2318,9 +2322,29 @@ textarea:disabled {
   }
   .admin-section {
     justify-content: flex-start;
+    margin-bottom: 6%;
   }
   .advertencia-vista {
     display: none;
+  }
+  .statistics-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5%;
+    margin-bottom: 5%;
+  }
+  .statistics-data div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .statistics-data div p:first-child {
+    font-weight: 600;
+    font-size: 45px;
   }
   .search-section {
     width: 90%;
@@ -3358,6 +3382,15 @@ textarea:disabled {
   }
   .check-cont-profile p {
     font-size: 20px;
+  }
+  .statistics-data {
+    width: 100%;
+    gap: 5%;
+    margin-bottom: 4%;
+  }
+  .statistics-data div p:first-child {
+    font-weight: 600;
+    font-size: 50px;
   }
   .search-section {
     width: 85%;

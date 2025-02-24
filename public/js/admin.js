@@ -13,8 +13,12 @@ const pool = new userModel();
 addEventListener("DOMContentLoaded", async () => {
 
     let contNotAccepted = document.getElementById("contNotAccepted");
+    let statistics = document.querySelector(".statistics-data") 
 
+    const usersAccepted = await pool.getUsersAccepted();
     const users = await pool.getUsersNotAccepted();
+
+    statistics.innerHTML = `<div><p>${usersAccepted.length}</p><p>USUARIOS VERIFICADOS</p></div><div><p>${users.length}</p><p>USUARIOS POR VERIFICAR</p></div><div><p>${usersAccepted.length + users.length}</p><p>USUARIOS TOTALES</p></div>`
 
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
