@@ -1048,6 +1048,10 @@ textarea:disabled {
   display: none;
 }
 
+.download-data {
+  display: none;
+}
+
 .text-black {
   color: #141414 !important;
 }
@@ -2345,6 +2349,24 @@ textarea:disabled {
   .statistics-data div p:first-child {
     font-weight: 600;
     font-size: 45px;
+  }
+  .download-data {
+    width: 100%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .download-data button {
+    height: 38px;
+    width: 12%;
+    background-color: #e27a02;
+    color: #F6F4F0;
+  }
+  .download-data button:hover {
+    background-color: #F2972B;
+    cursor: pointer;
   }
   .search-section {
     width: 90%;

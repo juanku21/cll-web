@@ -8,17 +8,99 @@ import { showMessage } from "./showMessage.js";
 const pool = new userModel();
 
 
+// función para generar Excel con datos
+
+function createExcelWithData(data) {
+
+    let excelData = []
+
+    for (let i = 0; i < data.length; i++) {
+        
+        const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "tipo-vinculo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
+        
+        let excelRegister = {}
+
+        keysBodyReq.forEach(key => {
+            excelRegister[key] = data[i][key];
+        })
+
+        excelData.push(excelRegister);
+
+    }
+
+    const worksheet = XLSX.utils.json_to_sheet(excelData);
+
+    // Crear un nuevo libro de Excel
+    const workbook = XLSX.utils.book_new();
+    
+    // Agregar la hoja al libro con un nombre específico
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Datos");
+
+    // Escribir el libro en formato binario
+    const workbookBinary = XLSX.write(workbook, { bookType: 'xlsx', type: 'binary' });
+    
+    // Función para convertir el string binario a un ArrayBuffer
+    function s2ab(s) {
+        const buf = new ArrayBuffer(s.length);
+        const view = new Uint8Array(buf);
+        for (let i = 0; i < s.length; i++) {
+        view[i] = s.charCodeAt(i) & 0xFF;
+        }
+        return buf;
+    }
+    
+    // Crear un Blob a partir del ArrayBuffer
+    const blob = new Blob([s2ab(workbookBinary)], { type: "application/octet-stream" });
+    
+    // Crear una URL para el Blob
+    const url = URL.createObjectURL(blob);
+    
+
+    // Crear un enlace invisible y simular el click para iniciar la descarga
+    const a = document.createElement("a");
+    a.href = url;
+    const date = new Date()
+
+    a.download = `copia-seguridad-cll-${date.toISOString().substring(0, 10)}.xlsx`; // Nombre del archivo a descargar
+
+    document.body.appendChild(a);
+    a.click();
+    
+
+    // Limpiar el DOM y liberar la URL
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+}
+
+
 // evento disparado al cargar la página
 
 addEventListener("DOMContentLoaded", async () => {
 
+    // obtención de elementos necesarios del DOM
+
+    const btnData = document.getElementById("btnData");
     let contNotAccepted = document.getElementById("contNotAccepted");
-    let statistics = document.querySelector(".statistics-data") 
+    let statistics = document.querySelector(".statistics-data")
+
+    // consultas a la base de datos
 
     const usersAccepted = await pool.getUsersAccepted();
     const users = await pool.getUsersNotAccepted();
 
+    // añadimos funcionalidad al botón creado para la descarga de datos en formato Excel
+
+    btnData.addEventListener("click", (e) => {
+        createExcelWithData(usersAccepted);
+    })
+
+    // generamos estadísticas para visualización por administrador
+
     statistics.innerHTML = `<div><p>${usersAccepted.length}</p><p>USUARIOS VERIFICADOS</p></div><div><p>${users.length}</p><p>USUARIOS POR VERIFICAR</p></div><div><p>${usersAccepted.length + users.length}</p><p>USUARIOS TOTALES</p></div>`
+
+
+    // lógica para el listado de usaurios que aguardan verificación
 
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
@@ -107,3 +189,5 @@ addEventListener("DOMContentLoaded", async () => {
     }
 
 })
+
+
