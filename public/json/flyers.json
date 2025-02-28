@@ -1,5 +1,9 @@
 [
     {
+        "img": "./assets/flyer-8.png",
+        "alt": "libro-malvinas-jose-maglione"
+    },
+    {
         "img": "./assets/flyer-1.png",
         "alt": "clases-particulares-computación"
     },
