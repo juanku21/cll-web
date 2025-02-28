@@ -10,68 +10,76 @@ const pool = new userModel();
 
 // función para generar Excel con datos
 
-function createExcelWithData(data) {
-
-    let excelData = []
-
-    for (let i = 0; i < data.length; i++) {
-        
-        const keysBodyReq = ["nombre", "telefono", "ffaa", "liceo", "tipo-vinculo", "promocion", "profesion", "especialidad", "rubro", "provincia", "ciudad", "empresa", "info"];
-        
-        let excelRegister = {}
-
-        keysBodyReq.forEach(key => {
-            excelRegister[key] = data[i][key];
-        })
-
-        excelData.push(excelRegister);
-
-    }
-
-    const worksheet = XLSX.utils.json_to_sheet(excelData);
-
+async function generateExcelFromJSON(data) {
     // Crear un nuevo libro de Excel
-    const workbook = XLSX.utils.book_new();
-    
-    // Agregar la hoja al libro con un nombre específico
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Datos");
+    const workbook = new ExcelJS.Workbook();
+    // Agregar una hoja al libro y nombrarla "Datos"
+    const worksheet = workbook.addWorksheet('Datos');
 
-    // Escribir el libro en formato binario
-    const workbookBinary = XLSX.write(workbook, { bookType: 'xlsx', type: 'binary' });
-    
-    // Función para convertir el string binario a un ArrayBuffer
-    function s2ab(s) {
-        const buf = new ArrayBuffer(s.length);
-        const view = new Uint8Array(buf);
-        for (let i = 0; i < s.length; i++) {
-        view[i] = s.charCodeAt(i) & 0xFF;
-        }
-        return buf;
-    }
-    
-    // Crear un Blob a partir del ArrayBuffer
-    const blob = new Blob([s2ab(workbookBinary)], { type: "application/octet-stream" });
-    
-    // Crear una URL para el Blob
+    // Definir las columnas con encabezados y anchos personalizados
+    worksheet.columns = [
+        { header: 'Nombre', key: 'nombre', width: 40 },
+        { header: 'Email', key: 'email', width: 40 },
+        { header: 'Teléfono', key: 'telefono', width: 40 },
+        { header: 'FFAA', key: 'ffaa', width: 40 },
+        { header: 'Liceo Militar', key: 'liceo', width: 40 },
+        { header: 'Vinculo', key: 'tipo-vinculo', width: 40 },
+        { header: 'Promoción', key: 'promocion', width: 40 },
+        { header: 'Profesión', key: 'profesion', width: 40 },
+        { header: 'Especialidad', key: 'especialidad', width: 40 },
+        { header: 'Rubro', key: 'rubro', width: 40 },
+        { header: 'Provincia', key: 'provincia', width: 40 },
+        { header: 'Ciudad', key: 'ciudad', width: 40 },
+        { header: 'Empresa', key: 'empresa', width: 40 },
+        { header: 'Información', key: 'info', width: 40 },
+        { header: 'Rol de Usuario', key: 'role', width: 40 },
+        { header: 'Aceptado', key: 'aceptado', width: 40 },
+        { header: 'ID Usuario', key: 'userID', width: 40 },
+        { header: 'URL Foto', key: 'photoURL', width: 40 }
+    ];
+
+
+
+    // Agregar los datos (cada objeto del array se convierte en una fila)
+    data.forEach(item => {
+        worksheet.addRow(item);
+    });
+
+    // Aplicar estilos a la fila de encabezado
+    worksheet.getRow(1).eachCell((cell) => {
+        cell.font = { bold: true };
+        cell.fill = {
+            type: 'pattern',
+            pattern: 'solid',
+            fgColor: { argb: 'FFCCCCCC' } // Color de fondo gris claro
+        };
+    });
+
+    // Generar el archivo Excel en un buffer
+    const buffer = await workbook.xlsx.writeBuffer();
+
+    // Crear un Blob a partir del buffer
+    const blob = new Blob([buffer], { type: "application/octet-stream" });
+
+    // Generar una URL para el Blob
     const url = URL.createObjectURL(blob);
-    
 
-    // Crear un enlace invisible y simular el click para iniciar la descarga
+    // Crear un enlace y simular un click para descargar el archivo
     const a = document.createElement("a");
     a.href = url;
-    const date = new Date()
 
-    a.download = `copia-seguridad-cll-${date.toISOString().substring(0, 10)}.xlsx`; // Nombre del archivo a descargar
+    const date = new Date();
 
+    a.download = `copia-seguridad-cll-${date.toISOString().substring(0, 10)}.xlsx`;
     document.body.appendChild(a);
-    a.click();
-    
 
-    // Limpiar el DOM y liberar la URL
+    a.click();
+
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
 }
+
 
 
 // evento disparado al cargar la página
@@ -92,7 +100,7 @@ addEventListener("DOMContentLoaded", async () => {
     // añadimos funcionalidad al botón creado para la descarga de datos en formato Excel
 
     btnData.addEventListener("click", (e) => {
-        createExcelWithData(usersAccepted);
+        generateExcelFromJSON(usersAccepted);
     })
 
     // generamos estadísticas para visualización por administrador
