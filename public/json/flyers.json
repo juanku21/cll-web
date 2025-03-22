@@ -30,5 +30,21 @@
     {
         "img": "./assets/flyer-7.jpeg",
         "alt": "aguas-de-paso-servicios"
+    },
+    {
+        "img": "./assets/flyer-9.jpeg",
+        "alt": "aguas-de-paso-servicios"
+    },
+    {
+        "img": "./assets/flyer-10.jpeg",
+        "alt": "aguas-de-paso-servicios"
+    },
+    {
+        "img": "./assets/flyer-11.jpeg",
+        "alt": "aguas-de-paso-servicios"
+    },
+    {
+        "img": "./assets/flyer-12.jpeg",
+        "alt": "aguas-de-paso-servicios"
     }
 ]
